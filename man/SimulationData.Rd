@@ -59,5 +59,5 @@ res = SimulationData(N.sample,N,Adj,sigma1,"BAN", beta0 = 10)
 y = res$y
 X = res$X
 beta1 = res$beta
-
+}
 
