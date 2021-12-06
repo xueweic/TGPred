@@ -1,0 +1,35 @@
+Package: APGD
+Type: Package
+Title: Accelerated Proximal Gradient Descent (APGD) algorithm to solve the penalized regression models.
+Version: 0.1.0
+Author: Xuewei Cao <xueweic@mtu.edu> Ling Zhang <lingzhan@mtu.edu>
+Maintainer: Xuewei Cao <xueweic@mtu.edu>
+Description: Tools for solving the penalized regression models, such as HuberNet, HuberLasso, 
+  Huber Elastic Net, Elastic Net, Lasso, Network regularization, 
+  using Accelerated Proximal Gradient Descent (APGD) algorithm.
+License: What license is it under?
+Encoding: UTF-8
+Depends: R (>= 3.0), igraph, Matrix, mvtnorm, MASS
+BugReports: github website
+LazyData: true
+Collate:
+  SupportFunctions.R
+  CalculateAdj.R
+  CalculateLaplacian.R
+  ConstructNetwork.R
+  GraphicalModel.R
+  Lambda_gird.R
+  SimulationData.R
+  HuberNet_Beta.R
+  HuberNet_SP.R
+  HuberENET_Beta.R
+  HuberENET_SP.R
+  ENET_Beta.R
+  ENET_SP.R
+  HuberLasso_Beta.R
+  HuberLasso_SP.R
+  Lasso_Beta.R
+  Lasso_SP.R
+  Net_Beta.R
+  Net_SP.R
+RoxygenNote: 7.1.1

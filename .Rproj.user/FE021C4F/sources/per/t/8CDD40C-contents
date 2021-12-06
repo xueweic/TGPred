@@ -1,0 +1,44 @@
+
+
+
+
+Adj = ConstructNetwork(200, "BAN")
+sigma1 = GraphicalModel(Adj)
+#print(sigma1)
+res = SimulationData(300, 200,Adj,sigma1,"BAN", beta0 = 1)
+y = res$y
+X = res$X
+beta1 = res$beta
+
+##### adjusted Lasso
+# - beta
+lambda0 = 100
+beta_hat_APGD <- Lasso_Beta(X, y, lambda0, method="APGD")
+beta_hat_CVX <- Lasso_Beta(X, y, lambda0, method="CVX")
+# - SP
+n_lambda <- 10
+SP_Lasso = Lasso_SP(X, y, n_lambda, B=2, gamma=1000, niter=2000, timer=FALSE)
+
+
+# ---our
+###### generate phenotype #####
+causal_rate <- 0.1
+cc_ratio <- 0.0001
+n_ind <- nrow(genotype)
+n_variant <- ncol(genotype)
+temp <- generate_pheno(genotype,causal_rate,cc_ratio)
+phenotype <- temp[[1]]
+causal_index <- temp[[2]]
+beta_orig <- rep(0,n_variant)
+beta_orig[causal_index] <- 1
+adjSC <- SC_adjust_or_not(genotype,phenotype,TRUE)
+genotype0 <- scale(genotype)
+adjSC0 <- SC_adjust_or_not(genotype0,phenotype,TRUE)
+
+lambda0 = 1
+
+a=adjLasso_Beta(genotype, phenotype, adjSC, lambda0, method="APGD",
+                gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, quiet=FALSE)
+plot(a)
+b=adjLasso_Beta(genotype, phenotype, adjSC, lambda0, method="CVX")
+plot(b)

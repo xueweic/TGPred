@@ -1,0 +1,76 @@
+
+
+
+
+
+Adj = ConstructNetwork(200, "BAN")
+sigma1 = GraphicalModel(Adj)
+#print(sigma1)
+res = SimulationData(300, 200,Adj,sigma1,"BAN", beta0 = 1)
+y = res$y
+X = res$X
+beta1 = res$beta
+
+
+##### HuberNet
+# - beta
+lambda0 = 200
+alpha0 = 0.5
+beta_hat_APGD <- HuberNet_Beta(X, y, Adj, lambda0, alpha0,method="APGD",gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8)
+beta_hat_CVX <- HuberNet_Beta(X, y, Adj,lambda0, alpha0,method="CVX")
+# - SP
+alphas <- c(0.1,0.2)
+n_lambda <- 2
+SP_HuberNet = HuberNet_SP(X, y, Adj ,alphas, n_lambda, B=2, gamma=1000, niter=2000, timer=FALSE)
+
+##### HuberENET
+# - beta
+lambda0 = 200
+alpha0 = 0.5
+beta_hat_APGD <- HuberENET_Beta(X, y, lambda0, alpha0, method="APGD")
+beta_hat_CVX <- HuberENET_Beta(X, y, lambda0, alpha0,method="CVX")
+# - SP
+alphas <- c(0.1,0.2)
+n_lambda <- 2
+SP_HuberENET = HuberENET_SP(X, y, alphas, n_lambda, B=2, gamma=1000, niter=2000, timer=FALSE)
+
+##### ENET
+# - beta
+lambda0 = 200
+alpha0 = 0.5
+beta_hat_APGD <- ENET_Beta(X, y, lambda0, alpha0, method="APGD")
+beta_hat_CVX <- ENET_Beta(X, y, lambda0, alpha0,method="CVX")
+# - SP
+alphas <- c(0.1,0.2)
+n_lambda <- 2
+SP_ENET = ENET_SP(X, y, alphas, n_lambda, B=2, gamma=1000, niter=2000, timer=FALSE)
+
+##### HuberLasso
+# - beta
+lambda0 = 200
+beta_hat_APGD <- HuberLasso_Beta(X, y, lambda0, method="APGD")
+beta_hat_CVX <- HuberLasso_Beta(X, y, lambda0, method="CVX")
+# - SP
+n_lambda <- 10
+SP_HuberLasso = HuberLasso_SP(X, y, n_lambda, B=2, gamma=1000, niter=2000, timer=FALSE)
+
+##### Lasso
+# - beta
+lambda0 = 200
+beta_hat_APGD <- Lasso_Beta(X, y, lambda0, method="APGD")
+beta_hat_CVX <- Lasso_Beta(X, y, lambda0, method="CVX")
+# - SP
+n_lambda <- 10
+SP_Lasso = Lasso_SP(X, y, n_lambda, B=2, gamma=1000, niter=2000, timer=FALSE)
+
+##### Net
+# - beta
+lambda0 = 200
+alpha0 = 0.5
+beta_hat_APGD <- Net_Beta(X, y, Adj, lambda0, alpha0,method="APGD",gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8)
+beta_hat_CVX <- Net_Beta(X, y, Adj,lambda0, alpha0,method="CVX")
+# - SP
+alphas <- c(0.1,0.2)
+n_lambda <- 2
+SP_Net = Net_SP(X, y, Adj ,alphas, n_lambda, B=2, gamma=1000, niter=2000, timer=FALSE)
+

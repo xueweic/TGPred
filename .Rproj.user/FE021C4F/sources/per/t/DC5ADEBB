@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1635439488505.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2749285995",
+    "id" : "DC5ADEBB",
+    "lastKnownWriteTime" : 1635464600,
+    "last_content_update" : 1635464600401,
+    "path" : "H:/My Drive/MTU/research/1_Project_me/Bayesian_idea/Project1/subfunction_baye.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "35,0",
+        "scrollLine" : "16"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
