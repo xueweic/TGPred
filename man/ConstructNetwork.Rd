@@ -43,3 +43,4 @@ ConstructNetwork(N_genes, Structure)
 N <- 200
 Adj <- ConstructNetwork(N, "BAN")
 Adj <- ConstructNetwork(N, "HN")
+    }
