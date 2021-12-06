@@ -46,3 +46,4 @@ N <- 200
 Adj <- ConstructNetwork(N, "BAN")
 
 sigma1 = GraphicalModel(Adj)
+}
