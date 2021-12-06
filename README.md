@@ -6,15 +6,14 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of APGD is to …
+The goal of Accelerated Proximal Gradient Descent (APGD) algorithm is to solve the penalized regression models.
 
 ## Installation
 
-You can install the released version of APGD from
-[CRAN](https://CRAN.R-project.org) with:
+You can install the released version of APGD from Github with:
 
 ``` r
-install.packages("APGD")
+devtools::install_github("xueweic/APGD")
 ```
 
 ## Example
