@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# APGD
+# APGD v.0.1.0
 
 <!-- badges: start -->
 <!-- badges: end -->
