@@ -23,6 +23,10 @@ You can install the released version of APGD from Github with:
 devtools::install_github("xueweic/APGD")
 ```
 
+## Reference
+Xuewei Cao^+, Ling Zhang^+, Kui Zhang1, Sanzhen Liu3, Qiuying Sha1,*, Hairong Wei2,*
+
+
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
