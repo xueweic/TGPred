@@ -32,7 +32,7 @@ Xuewei Cao<sup>+</sup>, Ling Zhang<sup>+</sup>, Kui Zhang, Sanzhen Liu, Qiuying 
 
 ## Example
 
-# Simulated data
+### Simulated data
 
 ``` r
 library(APGD)
