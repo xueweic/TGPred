@@ -30,12 +30,17 @@ Xuewei Cao<sup>+</sup>, Ling Zhang<sup>+</sup>, Kui Zhang, Sanzhen Liu, Qiuying 
 
 **Any questions**? xueweic_AT_mtu_DOT_edu, lingzhan_AT_mtu_DOT_edu
 
-## Example
+## Examples
 
 ### Simulated data
 
 ``` r
 library(APGD)
+Adj = ConstructNetwork(200, "HN")
+sigma1 = GraphicalModel(Adj)
+res = SimulationData(300, 200,Adj,sigma1,"BAN", beta0 = 1)
+y = res$y
+X = res$X
 ```
 
 
