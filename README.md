@@ -24,7 +24,7 @@ devtools::install_github("xueweic/APGD")
 ```
 
 ## Reference
-Xuewei Cao<sup>+</sup>, Ling Zhang<sup>+</sup>, Kui Zhang, Sanzhen Liu, Qiuying Sha<sup>*</sup>, Hairong Wei<sup>*</sup>. HuberNet function for interfering target genes of regulatory genes using high-throughput gene expression data.
+Xuewei Cao<sup>+</sup>, Ling Zhang<sup>+</sup>, Kui Zhang, Sanzhen Liu, Qiuying Sha*, Hairong Wei*. HuberNet function for interfering target genes of regulatory genes using high-throughput gene expression data.
 
 <sub><sup> <sup>+</sup> These authors have contributed equally to this work </sup></sub>
 
