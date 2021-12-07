@@ -24,10 +24,10 @@ devtools::install_github("xueweic/APGD")
 ```
 
 ## Reference
-Xuewei Cao<sup>+</sup>, Ling Zhang<sup>+</sup>, Kui Zhang, Sanzhen Liu, Qiuying Sha*, Hairong Wei*. HuberNet function for interfering target genes of regulatory genes using high-throughput gene expression data.
+Xuewei Cao<sup>+</sup>, Ling Zhang<sup>+</sup>, Kui Zhang, Sanzhen Liu, Qiuying Sha<sup>*</sup>, Hairong Wei<sup>*</sup>. HuberNet function for interfering target genes of regulatory genes using high-throughput gene expression data.
 
 <sub><sup> <sup>+</sup> These authors have contributed equally to this work </sup></sub>
-
+<sub><sup> Any questions: xueweic_AT_mtu_DOT_edu, lingzhan_AT_mtu_DOT_edu </sup></sub>
 
 ## Example
 
@@ -35,20 +35,6 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(APGD)
-#> Loading required package: igraph
-#> Warning: package 'igraph' was built under R version 3.6.3
-#> 
-#> Attaching package: 'igraph'
-#> The following objects are masked from 'package:stats':
-#> 
-#>     decompose, spectrum
-#> The following object is masked from 'package:base':
-#> 
-#>     union
-#> Loading required package: Matrix
-#> Loading required package: mvtnorm
-#> Loading required package: MASS
-## basic example code
 ```
 
 What is special about using `README.Rmd` instead of just `README.md`?
