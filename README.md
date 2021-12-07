@@ -6,7 +6,14 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of Accelerated Proximal Gradient Descent (APGD) algorithm is to solve the penalized regression models.
+The Accelerated Proximal Gradient Descent (APGD) algorithm is a R package to solve the penalized regression models, including 
+
+- Huber loss function along with Network-based penalty function;
+- Huber loss function along with Lasso penalty function;
+- Huber Huber loss function along with Elastic Net penalty function;
+- Mean square error loss function along with Elastic Net penalty function;
+- Mean square error loss function along with Lasso penalty function;
+- Mean square error loss function along with Network-based penalty function.
 
 ## Installation
 
