@@ -24,7 +24,7 @@ devtools::install_github("xueweic/APGD")
 ```
 
 ## Reference
-Xuewei Cao^+, Ling Zhang^+, Kui Zhang1, Sanzhen Liu3, Qiuying Sha1,*, Hairong Wei2,*
+Xuewei Cao$^+$, Ling Zhang$^+$, Kui Zhang, Sanzhen Liu, Qiuying Sha*, Hairong Wei*. 
 
 
 ## Example
