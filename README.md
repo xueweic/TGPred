@@ -68,8 +68,12 @@ or
 res = SimulationData(N_sample,N_genes,Adj,Sigma1,"HN", beta0 = 1)
 ```
 
-2. Calculate the estimated regression coefficients (beta_hat) using one of methods solving by APGD or CVX.
+### 2. Calculate the estimated regression coefficients (beta_hat) using one of methods solving by APGD or CVX.
 
+
+
+
+### 3. Calculate the selection probabilities using one of methods solving by APGD.
 
 <img src="man/figures/README-pressure-1.png" width="100%" />
 
