@@ -49,15 +49,21 @@ SimulationData(N_samples, N_genes, Adj, Sigma, method, beta0=NULL, beta_true=NUL
 }
 \examples{
 
-N.sample <- 300
-N <- 200
-Adj = ConstructNetwork(N, "BAN")
-sigma1 = GraphicalModel(Adj)
+N_samples <- 300
+    
+N_genes <- 200
+    
+Adj = ConstructNetwork(N_genes, "BAN")
+    
+Sigma1 = GraphicalModel(Adj)
 
-
-res = SimulationData(N.sample,N,Adj,sigma1,"BAN", beta0 = 10)
+    # Set up a true regression coefficient for simulated data (beta0=1)
+res = SimulationData(N_samples,N_genes,Adj,Sigma1,"BAN", beta0 = 1)
+    
 y = res$y
+    
 X = res$X
+    
 beta1 = res$beta
 }
 
