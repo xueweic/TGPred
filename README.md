@@ -88,8 +88,59 @@ plot(beta_hat_CVX)
 ```
 <img src="man/figures/Beta_hat_CVX.jpeg" width="100%" />
 
+- **HuberENET**: uber loss function along with Elastic Net penalty function.
 
-### 3. Calculate the selection probabilities using one of methods solving by APGD.
+``` r
+lambda0 = 200
+alpha0 = 0.5
+beta_hat_APGD <- HuberENET_Beta(X, y, lambda0, alpha0, method="APGD")
+library("CVXR")
+beta_hat_CVX <- HuberENET_Beta(X, y, lambda0, alpha0,method="CVX")
+```
+
+
+- **HuberLasso**: Huber loss function along with Lasso penalty function.
+
+``` r
+lambda0 = 200
+beta_hat_APGD <- HuberLasso_Beta(X, y, lambda0, method="APGD")
+library("CVXR")
+beta_hat_CVX <- HuberLasso_Beta(X, y, lambda0, method="CVX")
+```
+
+- **ENET**: Mean square error loss function along with Elastic Net penalty function.
+
+``` r
+lambda0 = 200
+alpha0 = 0.5
+beta_hat_APGD <- ENET_Beta(X, y, lambda0, alpha0, method="APGD")
+library("CVXR")
+beta_hat_CVX <- ENET_Beta(X, y, lambda0, alpha0,method="CVX")
+```
+
+- **Lasso**: Mean square error loss function along with Lasso penalty function.
+
+``` r
+lambda0 = 200
+beta_hat_APGD <- Lasso_Beta(X, y, lambda0, method="APGD")
+library("CVXR")
+beta_hat_CVX <- Lasso_Beta(X, y, lambda0, method="CVX")
+```
+
+- **Net**: Mean square error loss function along with Network-based penalty function.
+
+``` r
+lambda0 = 200
+alpha0 = 0.5
+beta_hat_APGD <- Net_Beta(X, y, Adj, lambda0, alpha0,method="APGD")
+library("CVXR")
+beta_hat_CVX <- Net_Beta(X, y, Adj,lambda0, alpha0,method="CVX")
+```
+
+
+### 3. Calculate Selection Probabilities by APGD
+
+
 
 
 
