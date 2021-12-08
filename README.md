@@ -55,7 +55,6 @@ Sigma1 = GraphicalModel(Adj)
 **Step 3**: Simulate y and X from a given network structure (Adjacency matrix and Laplacian matrix).
 
 
-
 ``` r
 N_samples <- 300
 res = SimulationData(N_sample,N_genes,Adj,Sigma1,"BAN", beta0 = 1)
@@ -68,8 +67,20 @@ or
 res = SimulationData(N_sample,N_genes,Adj,Sigma1,"HN", beta0 = 1)
 ```
 
-### 2. Calculate the estimated regression coefficients (beta_hat) using one of methods solving by APGD or CVX.
+### 2. Estimate Regression Coefficients
 
+Calculate the estimated regression coefficients (beta_hat) using one of methods solving by APGD or CVX.
+
+- **HuberNet**: Huber loss function along with Network-based penalty function.
+
+``` r
+lambda0 = 200
+alpha0 = 0.5
+beta_hat_APGD <- HuberNet_Beta(X, y, Adj, lambda0, alpha0,method="APGD",gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8)
+
+library("CVXR")
+beta_hat_CVX <- HuberNet_Beta(X, y, Adj, lambda0, alpha0,method="CVX")
+```
 
 
 
