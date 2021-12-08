@@ -50,8 +50,11 @@ decide if exist the output report. default: FALSE
 }
 \examples{
 lambda0 = 200
+  
 beta_hat_APGD <- HuberLasso_Beta(X, y, lambda0, method="APGD")
+  
 library("CVXR")
+  
 beta_hat_CVX <- HuberLasso_Beta(X, y, lambda0, method="CVX")
 }
 
