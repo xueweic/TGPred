@@ -45,5 +45,5 @@ GraphicalModel(Adj, a1 = -0.7, a2 = -0.1, b1 = 0.1, b2 = 0.7)
 N <- 200
 Adj <- ConstructNetwork(N, "BAN")
 
-sigma1 = GraphicalModel(Adj)
+Sigma1 = GraphicalModel(Adj)
 }
