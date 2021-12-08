@@ -49,17 +49,9 @@ decide if exist the output report. default: FALSE
 
 }
 \references{
-%% ~put references to the literature/web site here ~
-}
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
+lambda0 = 200
+beta_hat_APGD <- HuberLasso_Beta(X, y, lambda0, method="APGD")
+library("CVXR")
+beta_hat_CVX <- HuberLasso_Beta(X, y, lambda0, method="CVX")
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
