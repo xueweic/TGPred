@@ -49,6 +49,10 @@ Adj = ConstructNetwork(N_genes, "BAN")
 
 ``` r
 Sigma1 = GraphicalModel(Adj)
+# - Laplacian matrix
+res <- CalculateLaplacian(Adj)
+L <- res$L
+L_norm <- res$L_norm
 ```
 
 **Step 3**: Simulate y and X from a given network structure (Adjacency matrix and Laplacian matrix).
