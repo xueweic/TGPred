@@ -77,15 +77,19 @@ Calculate the estimated regression coefficients $\beta$(beta_hat) using one of m
 lambda0 = 200
 alpha0 = 0.5
 beta_hat_APGD <- HuberNet_Beta(X, y, Adj, lambda0, alpha0,method="APGD",gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8)
+plot(beta_hat_APGD)
+```
+<img src="man/figures/Beta_hat_APGD.jpeg" width="100%" />
 
+``` r
 library("CVXR")
 beta_hat_CVX <- HuberNet_Beta(X, y, Adj, lambda0, alpha0,method="CVX")
+plot(beta_hat_CVX)
 ```
-
+<img src="man/figures/Beta_hat_CVX.jpeg" width="100%" />
 
 
 ### 3. Calculate the selection probabilities using one of methods solving by APGD.
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
 
 
