@@ -143,6 +143,14 @@ beta_hat_CVX <- Net_Beta(X, y, Adj,lambda0, alpha0,method="CVX")
 
 ### 3. Calculate Selection Probabilities by APGD
 
+To avoid selecting the optimal tuning parameters $\lambda$ and $\alpha$, we can use half-sample resampling method to calculate the selection probabilities of each predictor. The grid of $\lambda$s for a given $\alpha$ from the proposed Huber or MSE loss functions can be calculated by
+
+``` r
+alpha <- 0.5
+n_lambda <- 10
+lambda_set <- Lambda_grid(X, y, n_lambda, alpha, loss_func = "Huber")
+lambda_set <- Lambda_grid(X, y, n_lambda, alpha, loss_func = "MSE")
+```
 
 
 
