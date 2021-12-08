@@ -29,7 +29,7 @@ Xuewei Cao<sup>+</sup>, Ling Zhang<sup>+</sup>, Kui Zhang, Sanzhen Liu, Qiuying 
 
 **Any questions**? xueweic_AT_mtu_DOT_edu, lingzhan_AT_mtu_DOT_edu
 
-## Examples
+## Guideline
 
 ### 1. Simulated data
 
