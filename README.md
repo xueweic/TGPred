@@ -69,7 +69,7 @@ res = SimulationData(N_sample,N_genes,Adj,Sigma1,"HN", beta0 = 1)
 
 ### 2. Estimate Regression Coefficients
 
-Calculate the estimated regression coefficients (beta_hat) using one of methods solving by APGD or CVX.
+Calculate the estimated regression coefficients ($$\beta$$beta_hat) using one of methods solving by APGD or CVX for a given set of 
 
 - **HuberNet**: Huber loss function along with Network-based penalty function.
 
