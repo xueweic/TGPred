@@ -54,18 +54,12 @@ decide if exist the output report. default: FALSE
 \item{beta }{n_genes length vector of estimated regulated effect sizes, where beta_j != 0 indicates j th gene is not selected in HuberNet regression.}
 
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
+\examples{
+
+lambda0 = 200
+alpha0 = 0.5
+beta_hat_APGD <- HuberNet_Beta(X, y, Adj, lambda0, alpha0,method="APGD",gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8)
+
+  
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
