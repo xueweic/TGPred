@@ -24,20 +24,12 @@ CalculateAdj(Annotation)
   \item{Adj }{the adjacency matrix of network structure.}
 
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
+\examples{
+
+    Annotation <- data.matrix(Annotation)
+    
+    CalculateAdj(Annotation)
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 
 
