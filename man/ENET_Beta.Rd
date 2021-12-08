@@ -52,9 +52,13 @@ quiet decide if exist the output report. default: FALSE
 \examples{
 
 lambda0 = 200
+ 
 alpha0 = 0.5
+ 
 beta_hat_APGD <- ENET_Beta(X, y, lambda0, alpha0, method="APGD")
+ 
 library("CVXR")
+ 
 beta_hat_CVX <- ENET_Beta(X, y, lambda0, alpha0,method="CVX")
 }
 
