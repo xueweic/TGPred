@@ -48,21 +48,6 @@ decide if exist the output report. default: FALSE
 \item{SP }{n_genes length vector of selection probability.}
 
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 n_lambda <- 50
   
