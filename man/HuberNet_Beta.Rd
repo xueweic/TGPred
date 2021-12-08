@@ -59,7 +59,8 @@ decide if exist the output report. default: FALSE
 lambda0 = 200
 alpha0 = 0.5
 beta_hat_APGD <- HuberNet_Beta(X, y, Adj, lambda0, alpha0,method="APGD",gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8)
-
+library("CVXR")
+beta_hat_CVX <- HuberNet_Beta(X, y, Adj, lambda0, alpha0,method="CVX")
   
 }
 
