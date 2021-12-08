@@ -42,6 +42,10 @@ CalculateLaplacian(Adj)
 }
 \examples{
   
-Sigma1 = GraphicalModel(Adj)
+  res <- CalculateLaplacian(Adj)
+  
+  L <- res$L
+  
+  L_norm <- res$L_norm
   
 }
