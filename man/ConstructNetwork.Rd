@@ -2,7 +2,7 @@
 \alias{ConstructNetwork}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-    Construct the network structure from either Hierarchical Network or Barabasi-Albert Network in simualtion studies.
+    Construct the network structure from either Hierarchical Network or Barabasi-Albert Network in simulation studies.
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
