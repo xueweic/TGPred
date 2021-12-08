@@ -66,9 +66,9 @@ or
 
 ``` r
 res = SimulationData(N_sample,N_genes,Adj,Sigma1,"HN", beta0 = 1)
-y = res$y
-X = res$X
 ```
+
+
 
 
 <img src="man/figures/README-pressure-1.png" width="100%" />
