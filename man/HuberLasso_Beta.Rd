@@ -48,7 +48,7 @@ decide if exist the output report. default: FALSE
 \item{beta }{n_genes length vector of estimated regulated effect sizes, where beta_j != 0 indicates j th gene is not selected in HuberLasso regression.}
 
 }
-\references{
+\examples{
 lambda0 = 200
 beta_hat_APGD <- HuberLasso_Beta(X, y, lambda0, method="APGD")
 library("CVXR")
