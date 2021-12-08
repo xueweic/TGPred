@@ -70,7 +70,7 @@ or
 res = SimulationData(N_sample,N_genes,Adj,Sigma1,"HN", beta0 = 1)
 ```
 
-### 2. Estimate Regression Coefficients
+### 2. Estimate Regression Coefficients by APGD or CVX
 
 Calculate the estimated regression coefficients $\hat{\beta}$ using one of methods solving by APGD or CVX for a given set of $\alpha_0$ and $\lambda_0$.
 
