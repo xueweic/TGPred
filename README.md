@@ -152,7 +152,31 @@ lambda_set <- Lambda_grid(X, y, n_lambda, alpha, loss_func = "Huber")
 lambda_set <- Lambda_grid(X, y, n_lambda, alpha, loss_func = "MSE")
 ```
 
+The selection probability can be calculated by each method.
 
+``` r
+## HuberNet
+alphas <- seq(0.1,0.9,0.1)
+n_lambda <- 10
+B0 <- 100
+SP_HuberNet = HuberNet_SP(X, y, Adj ,alphas, n_lambda, B=B0, gamma=1000, niter=2000, timer=FALSE)
+
+## HuberENET
+SP_HuberENET = HuberENET_SP(X, y, alphas, n_lambda, B=B0, gamma=1000, niter=2000, timer=FALSE)
+
+## Net
+SP_Net = Net_SP(X, y, Adj ,alphas, n_lambda, B=B0, gamma=1000, niter=2000, timer=FALSE)
+
+## ENET
+SP_ENET = ENET_SP(X, y, alphas, n_lambda, B=B0, gamma=1000, niter=2000, timer=FALSE)
+
+## HuberLasso
+n_lambda <- 50
+SP_HuberLasso = HuberLasso_SP(X, y, n_lambda, B=B0, gamma=1000, niter=2000, timer=FALSE)
+
+## Lasso
+SP_Lasso = Lasso_SP(X, y, n_lambda, B=B0, gamma=1000, niter=2000, timer=FALSE)
+```
 
 
 <!-- badges: end -->
