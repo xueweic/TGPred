@@ -32,7 +32,7 @@ Xuewei Cao<sup>+</sup>, Ling Zhang<sup>+</sup>, Kui Zhang, Sanzhen Liu, Qiuying 
 
 ## Examples
 
-### Simulated data
+### 1. Simulated data
 
 **Step 1**: Construct the network structure from either Hierarchical Network or Barabasi-Albert Network in simulation studies.
 
@@ -41,21 +41,35 @@ Xuewei Cao<sup>+</sup>, Ling Zhang<sup>+</sup>, Kui Zhang, Sanzhen Liu, Qiuying 
 
 ``` r
 library(APGD)
-N = 200
-Adj = ConstructNetwork(N, "HN")
-Adj = ConstructNetwork(N, "BAN")
+N_genes = 200
+Adj = ConstructNetwork(N_genes, "HN")
+Adj = ConstructNetwork(N_genes, "BAN")
 ```
+
+**Step 2**: Calculate Laplacian matrix and symmetric normalized Laplacian matrix from an adjacency matrix.
+
+``` r
+Sigma1 = GraphicalModel(Adj)
+```
+
+**Step 3**: Simulate y and X from a given network structure (Adjacency matrix and Laplacian matrix).
 
 
 
 ``` r
-library(APGD)
-Adj = ConstructNetwork(200, "HN")
-sigma1 = GraphicalModel(Adj)
-res = SimulationData(300, 200,Adj,sigma1,"BAN", beta0 = 1)
+N_samples <- 300
+res = SimulationData(N_sample,N_genes,Adj,Sigma1,"BAN", beta0 = 1)
 y = res$y
 X = res$X
 ```
+or 
+
+``` r
+res = SimulationData(N_sample,N_genes,Adj,Sigma1,"HN", beta0 = 1)
+y = res$y
+X = res$X
+```
+
 
 <img src="man/figures/README-pressure-1.png" width="100%" />
 
