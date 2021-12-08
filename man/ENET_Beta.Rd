@@ -49,19 +49,13 @@ quiet decide if exist the output report. default: FALSE
 \value{
  \item{beta }{n_genes length vector of estimated regulated effect sizes, where beta_j != 0 indicates j th gene is not selected in ENET regression.}
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
+\examples{
+
+lambda0 = 200
+alpha0 = 0.5
+beta_hat_APGD <- ENET_Beta(X, y, lambda0, alpha0, method="APGD")
+library("CVXR")
+beta_hat_CVX <- ENET_Beta(X, y, lambda0, alpha0,method="CVX")
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 
