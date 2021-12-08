@@ -34,10 +34,10 @@ Xuewei Cao<sup>+</sup>, Ling Zhang<sup>+</sup>, Kui Zhang, Sanzhen Liu, Qiuying 
 
 ### Simulated data
 
-- **Step 1**: Construct the network structure from either Hierarchical Network or Barabasi-Albert Network in simulation studies.
+**Step 1**: Construct the network structure from either Hierarchical Network or Barabasi-Albert Network in simulation studies.
 
--- In Hierarchical Network, the number of genes must be the integer times 100.
---In Barabasi-Albert Network, the number of genes must be the integer times 10.
+- In Hierarchical Network, the number of genes must be the integer times 100.
+- In Barabasi-Albert Network, the number of genes must be the integer times 10.
 
 ``` r
 library(APGD)
