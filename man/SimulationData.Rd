@@ -32,21 +32,6 @@ SimulationData(N_samples, N_genes, Adj, Sigma, method, beta0=NULL, beta_true=NUL
  \item{beta }{true regulated effect beta for N_genes TGs.}
 
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 
 N_samples <- 300
