@@ -4,7 +4,6 @@
 # APGD v.0.1.0
 
 <!-- badges: start -->
-<!-- badges: end -->
 
 The Accelerated Proximal Gradient Descent (APGD) algorithm is a R package to solve the penalized regression models, including 
 
@@ -139,6 +138,14 @@ beta_hat_CVX <- Net_Beta(X, y, Adj,lambda0, alpha0,method="CVX")
 
 
 ### 3. Calculate Selection Probabilities by APGD
+
+
+
+<!-- badges: end -->
+
+
+
+
 
 
 
