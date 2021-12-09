@@ -101,6 +101,9 @@ HuberENET_Beta <- function(X, y, lambda0, alpha0, method="APGD",
       print("Waining: Setting number of iterations doesn't reach to the convergency. Please set larger 'niter'!")
     }
     beta_hat <- beta_est[,k]
+    if (quiet==FALSE && sum(beta_hat != 0) == 0){
+      print("Warning: All estimated regression coefficients are 0s. Please check the size of lambda and input files!")
+    }
   } else {   # - CVX
     # if (!requireNamespace("CVXR", quietly = TRUE)) install.packages("CVXR")
     library(CVXR)
