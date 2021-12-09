@@ -182,8 +182,8 @@ SP_Lasso = Lasso_SP(X, y, n_lambda, B=B0, gamma=1000, niter=2000, timer=FALSE)
 
 **Example datasets**
 
-- Sample datasets for analysis using HuberNet and Net(TF, PWG, Annotation); 
-- Sample datasets for analysis using HuberLasso, Lasso, HuberENET, and ENET (TF, PWG).
+- Sample datasets (TF, PWG, Annotation) for analyzing using HuberNet and Net; 
+- Sample datasets (TF, PWG) for analyzing using HuberLasso, Lasso, HuberENET, and ENET.
 
 Example code for HuberNet penalized regression.
 
