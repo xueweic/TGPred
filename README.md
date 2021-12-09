@@ -205,7 +205,7 @@ beta_hat_APGD <- HuberNet_Beta(X, y, Adj, lambda0, alpha0, method="APGD", gamma=
 library("CVXR")
 beta_hat_CVX <- HuberNet_Beta(X, y, Adj, lambda0, alpha0, method="CVX")
 
-## Calculate Selection Probabilities by APGD
+## Calculate Selection Probabilities by APGD. (90 $\alpha-\lambda$ pairs and 100 resampling for each pair.)
 alphas <- seq(0.1,0.9,0.1)
 n_lambda <- 10
 B0 <- 100
