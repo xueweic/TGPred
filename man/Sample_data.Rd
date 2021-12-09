@@ -5,11 +5,9 @@
 Sample data for analysis
 }
 \description{
-Sample datasets for analysis using HuberNet and Net(TF, PWG, Annotation); Sample datasets for analysis using HuberLasso, Lasso, HuberENET, and ENET (TF, PWG).
+Sample datasets for analysis using HuberNet and Net(TF, PWG, Annotation); Sample datasets for analysis using HuberLasso, Lasso, HuberENET, and ENET (TF, PWG). Datasets with 3 dataframes, which are:
 }
 \usage{APGD::Sample_data}
-\format {Datasets with 3 dataframes, which are:
-}
 \arguments{
 
 \item{TF} {Expression level for one TF with 50 sample size.}
