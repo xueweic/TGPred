@@ -8,7 +8,7 @@ Sample data for analysis
 Sample datasets for analysis using HuberNet and Net(TF, PWG, Annotation); Sample datasets for analysis using HuberLasso, Lasso, HuberENET, and ENET (TF, PWG).
 }
 \usage{APGD::Sample_data}
-\format Datasets with 3 dataframes, which are:
+\format {Datasets with 3 dataframes, which are:
 }
 \arguments{
 
