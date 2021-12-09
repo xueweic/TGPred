@@ -91,7 +91,7 @@ plot(beta_hat_CVX)
 ```
 <img src="man/figures/Beta_hat_CVX.jpeg" width="100%" />
 
-- **HuberENET**: uber loss function along with Elastic Net penalty function.
+- **HuberENET**: Huber loss function along with Elastic Net penalty function.
 
 ``` r
 lambda0 = 200
@@ -179,6 +179,7 @@ SP_Lasso = Lasso_SP(X, y, n_lambda, B=B0, gamma=1000, niter=2000, timer=FALSE)
 ```
 
 ### 4. Real Data Analysis
+
 
 
 
