@@ -185,6 +185,12 @@ SP_Lasso = Lasso_SP(X, y, n_lambda, B=B0, gamma=1000, niter=2000, timer=FALSE)
 - Sample datasets for analysis using HuberNet and Net(TF, PWG, Annotation); 
 - Sample datasets for analysis using HuberLasso, Lasso, HuberENET, and ENET (TF, PWG).
 
+``` r
+Sample_data <- APGD::Sample_data
+X <- Sample_data$PWG
+y <- Sample_data$TF
+Annotation <- Sample_data$Annotation
+```
 
 
 
