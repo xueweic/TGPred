@@ -12,7 +12,7 @@ Contact:  lingzhan@mtu.edu; xueweic@mtu.edu
 
 ## APGD functions
 
-## Need Modules
+## Required Modules
 import pandas as pd
 import numpy as np
 import cvxpy as cp
