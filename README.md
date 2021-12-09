@@ -188,13 +188,28 @@ SP_Lasso = Lasso_SP(X, y, n_lambda, B=B0, gamma=1000, niter=2000, timer=FALSE)
 Example code for HuberNet penalized regression.
 
 ``` r
+library(APGD)
 Sample_data <- APGD::Sample_data
 X <- Sample_data$PWG
 y <- Sample_data$TF
 Annotation <- Sample_data$Annotation
-# obtain adjacency matrix from Annotation file
+
+## obtain adjacency matrix from Annotation file
 Annotation <- data.matrix(Annotation)
 Adj <- CalculateAdj(Annotation)
+
+## Estimate Regression Coefficients by APGD or CVX
+lambda0 = 10
+alpha0 = 0.5
+beta_hat_APGD <- HuberNet_Beta(X, y, Adj, lambda0, alpha0,method="APGD",gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8)
+library("CVXR")
+beta_hat_CVX <- HuberNet_Beta(X, y, Adj, lambda0, alpha0,method="CVX")
+
+## Calculate Selection Probabilities by APGD
+alphas <- seq(0.1,0.9,0.1)
+n_lambda <- 10
+B0 <- 100
+SP_HuberNet = HuberNet_SP(X, y, Adj ,alphas, n_lambda, B=B0, gamma=1000, niter=2000, timer=FALSE)
 ```
 
 
