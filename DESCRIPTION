@@ -32,4 +32,5 @@ Collate:
   Lasso_SP.R
   Net_Beta.R
   Net_SP.R
+  Sample_data.R
 RoxygenNote: 7.1.1
