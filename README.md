@@ -60,14 +60,14 @@ L_norm <- res$L_norm
 
 ``` r
 N_samples <- 300
-res = SimulationData(N_sample,N_genes,Adj,Sigma1,"BAN", beta0 = 1)
+res = SimulationData(N_sample, N_genes, Adj, Sigma1, "BAN", beta0 = 1)
 y = res$y
 X = res$X
 ```
 or 
 
 ``` r
-res = SimulationData(N_sample,N_genes,Adj,Sigma1,"HN", beta0 = 1)
+res = SimulationData(N_sample, N_genes, Adj, Sigma1, "HN", beta0 = 1)
 ```
 
 ### 2. Estimate Regression Coefficients by APGD or CVX
@@ -79,14 +79,14 @@ Calculate the estimated regression coefficients $\hat{\beta}$ using one of metho
 ``` r
 lambda0 = 200
 alpha0 = 0.5
-beta_hat_APGD <- HuberNet_Beta(X, y, Adj, lambda0, alpha0,method="APGD",gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8)
+beta_hat_APGD <- HuberNet_Beta(X, y, Adj, lambda0, alpha0, method="APGD", gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8)
 plot(beta_hat_APGD)
 ```
 <img src="man/figures/Beta_hat_APGD.jpeg" width="100%" />
 
 ``` r
 library("CVXR")
-beta_hat_CVX <- HuberNet_Beta(X, y, Adj, lambda0, alpha0,method="CVX")
+beta_hat_CVX <- HuberNet_Beta(X, y, Adj, lambda0, alpha0, method="CVX")
 plot(beta_hat_CVX)
 ```
 <img src="man/figures/Beta_hat_CVX.jpeg" width="100%" />
@@ -98,7 +98,7 @@ lambda0 = 200
 alpha0 = 0.5
 beta_hat_APGD <- HuberENET_Beta(X, y, lambda0, alpha0, method="APGD")
 library("CVXR")
-beta_hat_CVX <- HuberENET_Beta(X, y, lambda0, alpha0,method="CVX")
+beta_hat_CVX <- HuberENET_Beta(X, y, lambda0, alpha0, method="CVX")
 ```
 
 
@@ -118,7 +118,7 @@ lambda0 = 200
 alpha0 = 0.5
 beta_hat_APGD <- ENET_Beta(X, y, lambda0, alpha0, method="APGD")
 library("CVXR")
-beta_hat_CVX <- ENET_Beta(X, y, lambda0, alpha0,method="CVX")
+beta_hat_CVX <- ENET_Beta(X, y, lambda0, alpha0, method="CVX")
 ```
 
 - **Lasso**: Mean square error loss function along with Lasso penalty function.
@@ -135,9 +135,9 @@ beta_hat_CVX <- Lasso_Beta(X, y, lambda0, method="CVX")
 ``` r
 lambda0 = 200
 alpha0 = 0.5
-beta_hat_APGD <- Net_Beta(X, y, Adj, lambda0, alpha0,method="APGD")
+beta_hat_APGD <- Net_Beta(X, y, Adj, lambda0, alpha0, method="APGD")
 library("CVXR")
-beta_hat_CVX <- Net_Beta(X, y, Adj,lambda0, alpha0,method="CVX")
+beta_hat_CVX <- Net_Beta(X, y, Adj,lambda0, alpha0, method="CVX")
 ```
 
 
@@ -201,9 +201,9 @@ Adj <- CalculateAdj(Annotation)
 ## Estimate Regression Coefficients by APGD or CVX
 lambda0 = 10
 alpha0 = 0.5
-beta_hat_APGD <- HuberNet_Beta(X, y, Adj, lambda0, alpha0,method="APGD",gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8)
+beta_hat_APGD <- HuberNet_Beta(X, y, Adj, lambda0, alpha0, method="APGD", gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8)
 library("CVXR")
-beta_hat_CVX <- HuberNet_Beta(X, y, Adj, lambda0, alpha0,method="CVX")
+beta_hat_CVX <- HuberNet_Beta(X, y, Adj, lambda0, alpha0, method="CVX")
 
 ## Calculate Selection Probabilities by APGD
 alphas <- seq(0.1,0.9,0.1)
