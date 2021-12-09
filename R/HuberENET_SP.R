@@ -65,8 +65,8 @@ HuberENET_SP <- function(X, y, alphas, n_lambda, B=500,  gamma=1000, niter=2000,
         pos <- sample(1:n, n/2)
         y.sub <- y[pos,]
         X.sub <- X[pos,]
-        beta_hat_APGD <- HuberENET_Beta(X, y, lambda, alpha, method="APGD",
-                                       gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, quiet=TRUE)
+        invisible(capture.output(beta_hat_APGD <- HuberENET_Beta(X, y, lambda, alpha, method="APGD",
+                                       gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, quiet=TRUE)))
         beta_hat.LambdaAlpha[,i.b] <- beta_hat_APGD
       }
       Proportion.LambdaAlpha <- (beta_hat.LambdaAlpha != 0) * 1
