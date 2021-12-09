@@ -131,7 +131,7 @@ HuberNet_Beta <- function(X, y, Adj, lambda0, alpha0, method="APGD",
       print("Waining: Setting number of iterations doesn't reach to the convergency. Please set larger 'niter'!")
     }
     beta_hat1 <- beta_est[,k]
-    if (sum(beta_hat1 != 0) == 0){
+    if (quiet==FALSE && sum(beta_hat1 != 0) == 0){
       print("Warning: All estimated regression coefficients are 0s. Please check the size of lambda and input files!")
     }
   } else {
