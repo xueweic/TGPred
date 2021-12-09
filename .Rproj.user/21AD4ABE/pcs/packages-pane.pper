@@ -1,7 +1,0 @@
-{
-    "installOptions": {
-        "installFromRepository": true,
-        "libraryPath": "\\\\homes.mtu.edu/home/Documents/R/win-library/4.1",
-        "installDependencies": true
-    }
-}
