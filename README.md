@@ -180,6 +180,14 @@ SP_Lasso = Lasso_SP(X, y, n_lambda, B=B0, gamma=1000, niter=2000, timer=FALSE)
 
 ### 4. Real Data Analysis
 
+**Example datasets**
+
+- Sample datasets for analysis using HuberNet and Net(TF, PWG, Annotation); 
+- Sample datasets for analysis using HuberLasso, Lasso, HuberENET, and ENET (TF, PWG).
+
+
+
+
 **Input files**
 
 
