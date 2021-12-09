@@ -25,7 +25,8 @@ input:
   
 output:   
 - df: data frame    
-   	
+
+&emsp; &emsp;
    	
 ### 2. ConstructNetwork(n_genes, structure)
 **Construct the network structure from either Hierarchical Network or Barabasi-Albert Network in simulation studies**   
