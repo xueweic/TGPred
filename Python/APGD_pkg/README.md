@@ -140,7 +140,7 @@ Python version of the Accelerated Proximal Gradient Descent (APGD) algorithm is 
 
 &emsp; &emsp;
 
-### 9. HuberNet_SP(X, y, adj, alphas, n_lambda, B=500, gamma=1000, niter=2000)
+### 9. HuberNet_SP(X, y, adj, alphas, n_lambda, B=500, gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, timer=True)
 ***Estimate selection probability using HuberNet function solving by APGD.***
 
 - Input:
@@ -160,7 +160,7 @@ Python version of the Accelerated Proximal Gradient Descent (APGD) algorithm is 
 	- crit_obj: converge criterion of change of objective function.
 		- default: 1e-8
 	- timer: decide if exist the output report.
-		- default: FALSE  
+		- default: True  
 		
 - Output:
 	- sp_hubernet: n_genes length vector of selection probability.  
@@ -210,7 +210,7 @@ Python version of the Accelerated Proximal Gradient Descent (APGD) algorithm is 
 	- crit_obj: converge criterion of change of objective function.
 		- default: 1e-8
 	- timer: decide if exist the output report.
-		- default: FALSE  
+		- default: True  
 
 - Output:
 	- sp_huberlasso: n_genes length vector of selection probability.
@@ -238,7 +238,7 @@ Python version of the Accelerated Proximal Gradient Descent (APGD) algorithm is 
 		- default: FALSE  
 		
 - Output:
-	beta_hat: n_genes length vector of estimated regulated effect sizes, where beta_j != 0 indicates j th gene is not selected in Huber Elastic Net regression.
+	- beta_hat: n_genes length vector of estimated regulated effect sizes, where beta_j != 0 indicates j th gene is not selected in Huber Elastic Net regression.
 
 &emsp; &emsp;
 
@@ -261,20 +261,179 @@ Python version of the Accelerated Proximal Gradient Descent (APGD) algorithm is 
 	- crit_obj: converge criterion of change of objective function.
 		- default: 1e-8
 	- timer: decide if exist the output report.
-		- default: FALSE  
+		- default: True  
 		
 - Output:
 	- sp_huberenet: n_genes length vector of selection probability.  
  
 &emsp; &emsp;
 
+### 14. Enet_Beta(X, y, lambda0, alpha0, method="APGD", gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, quiet=False)
+***Estimate beta_hat using Elastic Net function.***
 
+- Input:
+	- X: expression levels of n_genes target genes (TGs).
+	- y: expression levels of a transcription factor (TF).
+	- lambda0: one of parameters in Elastic Net regression, which controls the number of nonzero coefficients.
+	- alpha0: one of parameters in Elastic Net regression, which controls the numerical values of nonzero coefficients.
+ 	- method: the current methods must be 'APGD' or 'CVX'.
+	- gamma: initial value of gamma in APGD.
+		- default: 1000
+	- niter: the maximum number of APGD to solve Elastic Net regression.
+		- default: 2000
+ 	- crit_beta: converge criterion of change of beta.
+ 	 	- default: 1e-4
+ 	- crit_obj: converge criterion of change of objective function.
+		- default: 1e-8
+	- quiet: decide if exist the output report.
+		- default: FALSE  
+		
+- Output:
+	- beta_hat: n_genes length vector of estimated regulated effect sizes, where beta_j != 0 indicates j th gene is not selected in Elastic Net regression.
 
 &emsp; &emsp;
 
+### 15. Enet_SP(X, y, alphas, n_lambda, B=500, gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, timer=True)
+***Estimate selection probability using ENET function solving by APGD.***
+
+- Input:
+	- X: expression levels of n_genes target genes (TGs).
+	- y: expression levels of a transcription factor (TF).
+	- alphas: the grid sets of alpha (in [0,1]) used to calculate selection probabilities of genes.
+	- n_lambda: the number of lambdas
+	- B: the number of half-sample resampling used to calculate selection probabilities of genes.
+		 - default: 500
+	- gamma: initial value of gamma in APGD.
+		- default: 1000
+	- niter: the maximum number of APGD to solve Elastic Net regression.
+		- default: 2000
+	- crit_beta: converge criterion of change of beta.
+		- default: 1e-4
+	- crit_obj: converge criterion of change of objective function.
+		- default: 1e-8
+	- timer: decide if exist the output report.
+		- default: True  
+		
+- Output:
+	- sp_enet: n_genes length vector of selection probability.
+
 &emsp; &emsp;
+
+### 16. Lasso_Beta(X, y, lambda0, method="APGD", gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, quiet=False)
+***Estimate beta_hat using Lasso function.***
+
+- Input:
+	- X: expression levels of n_genes target genes (TGs).
+	- y: expression levels of a transcription factor (TF).
+	- lambda0: one of parameters in HuberNet regression, which controls the number of nonzero coefficients.
+	- gamma: initial value of gamma in APGD.
+		- default: 1000
+	- niter: the maximum number of APGD to solve Lasso regression.
+		- default: 2000
+ 	- crit_beta: converge criterion of change of beta.
+ 	 	- default: 1e-4
+ 	- crit_obj: converge criterion of change of objective function.
+		- default: 1e-8
+	- quiet: decide if exist the output report.
+		- default: FALSE  
+		
+- Output:
+	- beta_hat: n_genes length vector of estimated regulated effect sizes, where beta_j != 0 indicates j th gene is not selected in Lasso regression.
+
+&emsp; &emsp;
+
+### 17. Lasso_SP(X, y, n_lambda, B=500, gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, timer=True)
+***Estimate selection probability using Lasso function solving by APGD.***
+
+- Input:
+	- X: expression levels of n_genes target genes (TGs).
+	- y: expression levels of a transcription factor (TF).
+	- alphas: the grid sets of alpha (in [0,1]) used to calculate selection probabilities of genes.
+	- n_lambda: the number of lambdas
+	- B: the number of half-sample resampling used to calculate selection probabilities of genes.
+		- default: 500
+	- gamma: initial value of gamma in APGD.
+		- default: 1000
+	- niter: the maximum number of APGD to solve HuberNet regression.
+		- default: 2000
+	- crit_beta: converge criterion of change of beta.
+		- default: 1e-4
+	- crit_obj: converge criterion of change of objective function.
+		- default: 1e-8
+	- timer: decide if exist the output report.
+		- default: True  
+
+- Output:
+	- sp_lasso: n_genes length vector of selection probability.
+
+&emsp; &emsp;
+
+### 18. Net_Beta(X, y, adj, lambda0, alpha0, method="APGD", gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, quiet=False)
+***Estimate beta_hat using Net function.***
+
+- Input:
+	- X: expression levels of n_genes target genes (TGs).
+	- y: expression levels of a transcription factor (TF).
+	- adj: the adjacency matrix of network structure.
+	- lambda0: one of parameters in Net regression, which controls the number of nonzero coefficients.
+	- alpha0: one of parameters in Net regression, which controls the numerical values of nonzero coefficients.
+ 	- method: the current methods must be 'APGD' or 'CVX'.
+	- gamma: initial value of gamma in APGD.
+		- default: 1000
+	- niter: the maximum number of APGD to solve HuberNet regression.
+		- default: 2000
+ 	- crit_beta: converge criterion of change of beta.
+ 	 	- default: 1e-4
+ 	- crit_obj: converge criterion of change of objective function.
+		- default: 1e-8
+	- quiet: decide if exist the output report.
+		- default: FALSE  
+		
+- Output:
+	- beta_hat: n_genes length vector of estimated regulated effect sizes, where beta_j != 0 indicates j th gene is not selected in Net regression.
+
+&emsp; &emsp;
+
+### 19. Net_SP(X, y, adj, alphas, n_lambda, B=500, gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, timer=True)
+***Estimate selection probability using Net function solving by APGD.***
+
+- Input:
+	- X: expression levels of n_genes target genes (TGs).
+	- y: expression levels of a transcription factor (TF).
+	- alphas: the grid sets of alpha (in [0,1]) used to calculate selection probabilities of genes.
+	- n_lambda: the number of lambdas
+	- B: the number of half-sample resampling used to calculate selection probabilities of genes.
+		- default: 500
+	- gamma: initial value of gamma in APGD.
+		- default: 1000
+	- niter: the maximum number of APGD to solve Net regression.
+		- default: 2000
+	- crit_beta: converge criterion of change of beta.
+		- default: 1e-4
+	- crit_obj: converge criterion of change of objective function.
+		- default: 1e-8
+	- timer: decide if exist the output report.
+		- default: True 
+		
+- Output:
+	- sp_net: n_genes length vector of selection probability.
+
+&emsp; &emsp;
+
+## Support functions:
+
+### 1. Huber_gradient(delta, m)
+***Calculate the gradient of Huber function for an input value delta.***
+
+- Input:
+  - delta: Input value delta.
+  - m: Shape parameter, which is defaulted to be one-tenth of the interquartile range (IRQ).  
+  
+- Output:
+  - value: The gradient of Huber function for an input value z. 
 
 &emsp; &emsp;
 
 
-&emsp; &emsp;
+
+
