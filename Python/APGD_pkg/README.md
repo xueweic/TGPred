@@ -420,7 +420,7 @@ Python version of the Accelerated Proximal Gradient Descent (APGD) algorithm is 
 
 &emsp; &emsp;
 
-## Support functions:
+## Support Functions:
 
 ### 1. Huber_gradient(delta, m)
 ***Calculate the gradient of Huber function for an input value delta.***
