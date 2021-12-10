@@ -18,39 +18,56 @@ Python version of the Accelerated Proximal Gradient Descent (APGD) algorithm is 
 ### 1. read_file(file_path)
 **Read file path to get data.**
 
-- input:   
+- Input:   
 	- file_path: the path of the file (.txt .csv) and separator by tab ('\t'). 
   
-- output:   	
-	- df: data frame    
+- Output:   	
+	- df: data frame.    
 
 &emsp; &emsp;
    	
 ### 2. ConstructNetwork(n_genes, structure)
 **Construct the network structure from either Hierarchical Network or Barabasi-Albert Network in simulation studies.**   
 
-- input:
-	- n_genes: the number of genes   
-	- structure: "HN": Hierarchical Network or  "BAN": Barabasi-Albert Network   
+- Input:
+	- n_genes: the number of genes.   
+	- structure: "HN": Hierarchical Network or  "BAN": Barabasi-Albert Network.   
 
-- output:   
+- Output:   
 	- adj_all: n_genes * n_genes dimensional symmetric adjacency matrix of network structure.	  
 	
 &emsp; &emsp;
 
-### 3.GraphicalModel(adj, a1=-0.7, a2=-0.1, b1=0.1, b2=0.7)
+### 3. GraphicalModel(adj, a1=-0.7, a2=-0.1, b1=0.1, b2=0.7)
 **Simulate a covariance matrix from the specific graph (Adj) based on a Gaussian graphical model.**  
 
-- Input
+- Input:
 	- adj: the adjacency matrix of network structure.
 	- a1, a2, b1, b2: parameters for constructing domain [a1, a2] union [b1, b2].  
 	  default: a1 = -0.7, a2 = -0.1, b1 = 0.1, b2 = 0.7
-- Output
+- Output:
 	- sigma: covariance matrix of target genes according to network structure.
 
+&emsp; &emsp;
 
-
-
+### 3. SimulationData(n_samples, n_genes, adj, sigma, beta0=None, beta_true=None)
+**Simulate y and X from a given network structure.**  
+- Input:
+	- n_samples: the number of sample size.
+	- n_genes: the number of target genes.
+	- adj: the adjacency matrix of network structure. Adjacency matrix must be a n_genes * n_genes dimensional.
+	- symmetric matrix, the elements equal 1 indicates two genes are connected. If you consider Barabasi-Albert.
+	- Network or Hierarchical Network in the article, you can directly use "ConstructNetwork" function to get the adjacency matrix.the adjacency matrix of network structure. directly use "ConstructNetwork" function to get the adjacency matrix.
+	- sigma: the covariance matrix of target genes according to network structure. You can directly use "GraphicalModel" function to get the covariance matrix.
+	- method: "HN": by Hierarchical Network, "BAN": by Barabasi-Albert Network or "DIY": by user designed.
+	- beta0: numeric value of effect size in simulation settings.  
+		 default: None; if method is "HN" or "BAN", input a numerical value.
+	- beta_true: numeric matrix with the dimension of n_genes * 1 in simulation settings.  
+		     default: None; if method is "DIY", input a numerical matrix (n_genes * 1).
+- Output:
+	- y: expression levels of a transcription factor (TF).
+	- X: expression levels of n_genes target genes (TGs).
+	- beta: true regulated effect beta for n_genes TGs.
 
 
 	
