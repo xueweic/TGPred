@@ -21,7 +21,7 @@ The Accelerated Proximal Gradient Descent (APGD) algorithm is a R package to sol
 **Read file path to get data**
 
 - input:   
- - file_path: the path of the file (.txt .csv) and separator by tab ('\t'). 
+	- file_path: the path of the file (.txt .csv) and separator by tab ('\t'). 
   
 - output:   
  - df: data frame    
