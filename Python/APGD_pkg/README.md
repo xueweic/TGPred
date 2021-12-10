@@ -44,7 +44,7 @@ Python version of the Accelerated Proximal Gradient Descent (APGD) algorithm is 
 - Input:
 	- adj: the adjacency matrix of network structure.
 	- a1, a2, b1, b2: parameters for constructing domain [a1, a2] union [b1, b2].  
-		- default: a1 = -0.7, a2 = -0.1, b1 = 0.1, b2 = 0.7.  
+		- default: a1 = -0.7, a2 = -0.1, b1 = 0.1, b2 = 0.7   
 		
 - Output: 
 	- sigma: covariance matrix of target genes according to network structure.  
@@ -114,4 +114,31 @@ Python version of the Accelerated Proximal Gradient Descent (APGD) algorithm is 
 
 &emsp; &emsp;
 	
-	
+### 8. HuberNet_Beta(X, y, adj, lambda0, alpha0, method="APGD", gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, quiet=False)
+***Estimate beta_hat using HuberNet function.***  
+
+- Input:
+	- X: expression levels of n_genes target genes (TGs).
+	- y: expression levels of a transcription factor (TF).
+	- adj: the adjacency matrix of network structure.
+	- lambda0: one of parameters in HuberNet regression, which controls the number of nonzero coefficients.
+	- alpha0: one of parameters in HuberNet regression, which controls the numerical values of nonzero coefficients.
+ 	- method: The current methods must be 'APGD' or 'CVX'.
+	- gamma: initial value of gamma in APGD.
+		- default: 1000
+	- niter: the maximum number of APGD to solve HuberNet regression.
+		- default: 2000
+ 	- crit_beta: converge criterion of change of beta.
+ 	 	- default: 1e-4
+ 	- crit_obj: converge criterion of change of objective function.
+		- default: 1e-8
+	- quiet: decide if exist the output report.
+		- default: FALSE  
+		
+- Output:
+	- beta_hat: n_genes length vector of estimated regulated effect sizes, where beta_j != 0 indicates j th gene is not selected in HuberNet regression.  
+
+&emsp; &emsp;
+
+
+
