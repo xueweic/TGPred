@@ -44,13 +44,13 @@ Python version of the Accelerated Proximal Gradient Descent (APGD) algorithm is 
 - Input:
 	- adj: the adjacency matrix of network structure.
 	- a1, a2, b1, b2: parameters for constructing domain [a1, a2] union [b1, b2].  
-	  default: a1 = -0.7, a2 = -0.1, b1 = 0.1, b2 = 0.7
+		default: a1 = -0.7, a2 = -0.1, b1 = 0.1, b2 = 0.7
 - Output:
 	- sigma: covariance matrix of target genes according to network structure.
 
 &emsp; &emsp;
 
-### 3. SimulationData(n_samples, n_genes, adj, sigma, beta0=None, beta_true=None)
+### 4. SimulationData(n_samples, n_genes, adj, sigma, beta0=None, beta_true=None)
 **Simulate y and X from a given network structure.**  
 - Input:
 	- n_samples: the number of sample size.
@@ -61,9 +61,9 @@ Python version of the Accelerated Proximal Gradient Descent (APGD) algorithm is 
 	- sigma: the covariance matrix of target genes according to network structure. You can directly use "GraphicalModel" function to get the covariance matrix.
 	- method: "HN": by Hierarchical Network, "BAN": by Barabasi-Albert Network or "DIY": by user designed.
 	- beta0: numeric value of effect size in simulation settings.  
-		 default: None; if method is "HN" or "BAN", input a numerical value.
+		default: None; if method is "HN" or "BAN", input a numerical value.
 	- beta_true: numeric matrix with the dimension of n_genes * 1 in simulation settings.  
-		     default: None; if method is "DIY", input a numerical matrix (n_genes * 1).
+		default: None; if method is "DIY", input a numerical matrix (n_genes * 1).
 - Output:
 	- y: expression levels of a transcription factor (TF).
 	- X: expression levels of n_genes target genes (TGs).
