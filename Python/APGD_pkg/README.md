@@ -89,7 +89,7 @@ Python version of the Accelerated Proximal Gradient Descent (APGD) algorithm is 
 ***Calculate Laplacian matrix and symmetric normalized Laplacian matrix from an adjacency matrix.***  
 
 - Input:
-	adj: the adjacency matrix of network structure.  
+	- adj: the adjacency matrix of network structure.  
 	
 - Output:
 	- l: the Laplacian matrix for network structure.
@@ -434,6 +434,24 @@ Python version of the Accelerated Proximal Gradient Descent (APGD) algorithm is 
 
 &emsp; &emsp;
 
+### 2. Huber_Mz(z, m)
+***Calculate the Huber function for an input value z.***
 
+- Input:
+  - z: Input value z
+  - m: Shape parameter, which is defaulted to be one-tenth of the interquartile range (IRQ).
 
+- Output:
+  - value: The Huber function for an input value z.
 
+&emsp; &emsp;
+
+### 3. count_time(start, end)
+***Calculate running time.***
+
+- Input:
+	- start: start point.
+	- end: end point.
+
+- Output:
+	- show the running time by hours, minutes and seconds.
