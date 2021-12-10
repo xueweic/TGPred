@@ -30,6 +30,7 @@ warnings.filterwarnings("ignore")
 
 
 ## Read data by file path
+## read_file(file_path)
 # Read file path to get data
 # input
 #	file_path: the path of the file (.txt .csv) and separator by tab ('\t').
@@ -517,7 +518,7 @@ def HuberNet_Beta(X, y, adj, lambda0, alpha0, method="APGD", gamma=1000, niter=2
     return beta_hat
 
 
-##5.HuberNet_SP(X, y, adj, alphas, n_lambda, B=500, gamma=1000, niter=2000)
+##5.HuberNet_SP(X, y, adj, alphas, n_lambda, B=500, gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, timer=True)
 # Estimate selection probability using HuberNet function solving by APGD
 # input
 #	X: expression levels of n_genes target genes (TGs)
@@ -536,7 +537,7 @@ def HuberNet_Beta(X, y, adj, lambda0, alpha0, method="APGD", gamma=1000, niter=2
 #   crit_obj: converge criterion of change of objective function.
 #             default: 1e-8
 #   timer: decide if exist the output report.
-#          default: FALSE
+#          default: True
 # output
 #	sp_hubernet: n_genes length vector of selection probability.
 def HuberNet_SP(X, y, adj, alphas, n_lambda, B=500, gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, timer=True):
@@ -761,7 +762,7 @@ def HuberLasso_Beta(X, y, lambda0, method="APGD", gamma=1000, niter=2000, crit_b
 #   crit_obj: converge criterion of change of objective function.
 #             default: 1e-8
 #   timer: decide if exist the output report.
-#          default: FALSE
+#          default: True
 # output
 #	sp_huberlasso: n_genes length vector of selection probability.
 def HuberLasso_SP(X, y, n_lambda, B=500, gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, timer=True):
@@ -852,8 +853,6 @@ def HuberLasso_SP(X, y, n_lambda, B=500, gamma=1000, niter=2000, crit_beta=1e-4,
 # output
 #	beta_hat: n_genes length vector of estimated regulated effect sizes, where beta_j != 0 indicates
 #	j th gene is not selected in Huber Elastic Net regression.
-# output
-#	beta: n_genes length vector of estimated regulated effect sizes, where beta_j != 0 indicates j th gene is not selected in HuberNet regression.
 def HuberEnet_Beta(X, y, lambda0, alpha0, method="APGD", gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, quiet=False):
     if type(X) is not matrix:
         X = X.to_numpy()
@@ -976,7 +975,7 @@ def HuberEnet_Beta(X, y, lambda0, alpha0, method="APGD", gamma=1000, niter=2000,
 #   crit_obj: converge criterion of change of objective function.
 #             default: 1e-8
 #   timer: decide if exist the output report.
-#          default: FALSE
+#          default: True
 # output
 #	sp_huberenet: n_genes length vector of selection probability.
 def HuberEnet_SP(X, y, alphas, n_lambda, B=500, gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, timer=True):
@@ -1054,6 +1053,7 @@ def HuberEnet_SP(X, y, alphas, n_lambda, B=500, gamma=1000, niter=2000, crit_bet
 
 
 ##10.Enet_Beta(X, y, lambda0, alpha0, method="APGD", gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, quiet=False)
+# Estimate beta_hat using Elastic Net function
 # input
 #	X: expression levels of n_genes target genes (TGs)
 #	y: expression levels of a transcription factor (TF)
@@ -1175,6 +1175,7 @@ def Enet_Beta(X, y, lambda0, alpha0, method="APGD", gamma=1000, niter=2000, crit
 
 
 ##9.Enet_SP(X, y, alphas, n_lambda, B=500, gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, timer=True)
+# Estimate selection probability using ENET function solving by APGD
 # input
 #	X: expression levels of n_genes target genes (TGs)
 #	y: expression levels of a transcription factor (TF)
@@ -1191,7 +1192,7 @@ def Enet_Beta(X, y, lambda0, alpha0, method="APGD", gamma=1000, niter=2000, crit
 #   crit_obj: converge criterion of change of objective function.
 #             default: 1e-8
 #   timer: decide if exist the output report.
-#          default: FALSE
+#          default: True
 # output
 #	sp_enet: n_genes length vector of selection probability.
 def Enet_SP(X, y, alphas, n_lambda, B=500, gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, timer=True):
@@ -1269,6 +1270,7 @@ def Enet_SP(X, y, alphas, n_lambda, B=500, gamma=1000, niter=2000, crit_beta=1e-
 
 
 ##10.Lasso_Beta(X, y, lambda0, method="APGD", gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, quiet=False)
+# Estimate beta_hat using Lasso function
 # input
 #	X: expression levels of n_genes target genes (TGs)
 #	y: expression levels of a transcription factor (TF)
@@ -1381,6 +1383,7 @@ def Lasso_Beta(X, y, lambda0, method="APGD", gamma=1000, niter=2000, crit_beta=1
 
 
 ##11.Lasso_SP(X, y, n_lambda, B=500, gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, timer=True)
+# Estimate selection probability using Lasso function solving by APGD
 # input
 #	X: expression levels of n_genes target genes (TGs)
 #	y: expression levels of a transcription factor (TF)
@@ -1392,6 +1395,12 @@ def Lasso_Beta(X, y, lambda0, method="APGD", gamma=1000, niter=2000, crit_beta=1
 #		   default: 1000
 #	niter: the maximum number of APGD to solve HuberNet regression.
 #		   default: 2000
+#   crit_beta: converge criterion of change of beta.
+#              default: 1e-4
+#   crit_obj: converge criterion of change of objective function.
+#             default: 1e-8
+#   timer: decide if exist the output report.
+#          default: True
 # output
 #	sp_lasso: n_genes length vector of selection probability.
 def Lasso_SP(X, y, n_lambda, B=500, gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, timer=True):
@@ -1462,6 +1471,7 @@ def Lasso_SP(X, y, n_lambda, B=500, gamma=1000, niter=2000, crit_beta=1e-4, crit
 
 
 ##12.Net_Beta(X, y, adj, lambda0, alpha0, method="APGD", gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, quiet=False)
+# Estimate beta_hat using Net function
 # input
 #	X: expression levels of n_genes target genes (TGs)
 #	y: expression levels of a transcription factor (TF)
@@ -1613,6 +1623,7 @@ def Net_Beta(X, y, adj, lambda0, alpha0, method="APGD", gamma=1000, niter=2000, 
 
 
 ##13.Net_SP(X, y, adj, alphas, n_lambda, B=500, gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, timer=True)
+# Estimate selection probability using Net function solving by APGD
 # input
 #	X: expression levels of n_genes target genes (TGs)
 #	y: expression levels of a transcription factor (TF)
@@ -1629,7 +1640,7 @@ def Net_Beta(X, y, adj, lambda0, alpha0, method="APGD", gamma=1000, niter=2000, 
 #   crit_obj: converge criterion of change of objective function.
 #             default: 1e-8
 #   timer: decide if exist the output report.
-#          default: FALSE
+#          default: True
 # output
 #	sp_net: n_genes length vector of selection probability.
 def Net_SP(X, y, adj, alphas, n_lambda, B=500, gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, timer=True):
