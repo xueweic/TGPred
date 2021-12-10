@@ -29,7 +29,7 @@ Xuewei Cao<sup>+</sup>, Ling Zhang<sup>+</sup>, Kui Zhang, Sanzhen Liu, Qiuying 
 
 <sub><sup> <sup>+</sup> These authors have contributed equally to this work </sup></sub>
 
-**Any questions**? xueweic_AT_mtu_DOT_edu, lingzhan_AT_mtu_DOT_edu
+**Any questions?** xueweic_AT_mtu_DOT_edu, lingzhan_AT_mtu_DOT_edu
 
 ## Guideline
 
