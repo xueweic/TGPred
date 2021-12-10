@@ -14,6 +14,8 @@ The Accelerated Proximal Gradient Descent (APGD) algorithm is a R package to sol
 - **Lasso**: Mean square error loss function along with Lasso penalty function;
 - **Net**: Mean square error loss function along with Network-based penalty function.
 
+We also have [Pyhton version](https://github.com/tobefuture/APGD), please see the following link for the guideline of Python version https://github.com/tobefuture/APGD.
+
 ## Installation
 
 You can install the released version of APGD from Github with:
