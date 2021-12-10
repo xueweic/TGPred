@@ -16,7 +16,7 @@ Python version of the Accelerated Proximal Gradient Descent (APGD) algorithm is 
 ## Functions
 
 ### 1. read_file(file_path)
-**Read file path to get data**
+**Read file path to get data.**
 
 - input:   
 	- file_path: the path of the file (.txt .csv) and separator by tab ('\t'). 
@@ -27,7 +27,7 @@ Python version of the Accelerated Proximal Gradient Descent (APGD) algorithm is 
 &emsp; &emsp;
    	
 ### 2. ConstructNetwork(n_genes, structure)
-**Construct the network structure from either Hierarchical Network or Barabasi-Albert Network in simulation studies**   
+**Construct the network structure from either Hierarchical Network or Barabasi-Albert Network in simulation studies.**   
 
 - input:
 	- n_genes: the number of genes   
@@ -36,6 +36,22 @@ Python version of the Accelerated Proximal Gradient Descent (APGD) algorithm is 
 - output:   
 	- adj_all: n_genes * n_genes dimensional symmetric adjacency matrix of network structure.	  
 	
+&emsp; &emsp;
+
+### 3.GraphicalModel(adj, a1=-0.7, a2=-0.1, b1=0.1, b2=0.7)
+**Simulate a covariance matrix from the specific graph (Adj) based on a Gaussian graphical model.**  
+
+- Input
+	- adj: the adjacency matrix of network structure.
+	- a1, a2, b1, b2: parameters for constructing domain [a1, a2] union [b1, b2].  
+	  default: a1 = -0.7, a2 = -0.1, b1 = 0.1, b2 = 0.7
+- Output
+	- sigma: covariance matrix of target genes according to network structure.
+
+
+
+
+
 
 	
 	
