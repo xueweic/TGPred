@@ -33,16 +33,17 @@ pip install APGD
 ```
 &emsp;
 
-**Step 3** Test your APGD in python:
+**Step 3.** Test your APGD in python:
 
 ``` r
 import APGD
 ```
 
 If there is no Error, you have installed APGD package successfully!
-&emsp;
 
-**Step 4** Play with function in APGD referred by [APGD_Guide](https://github.com/tobefuture/APGD/blob/main/Python/APGD_Guide.pdf).
+&emsp; &emsp;
+
+**Step 4.** Play with function in APGD referred by [APGD_Guide](https://github.com/tobefuture/APGD/blob/main/Python/APGD_Guide.pdf).
 
 &emsp; &emsp;
 
