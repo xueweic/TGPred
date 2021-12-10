@@ -20,23 +20,23 @@ The Accelerated Proximal Gradient Descent (APGD) algorithm is a R package to sol
 ### 1. read_file(file_path)
 **Read file path to get data**
 
-input:   
-- file_path: the path of the file (.txt .csv) and separator by tab ('\t'). 
+- input:   
+ - file_path: the path of the file (.txt .csv) and separator by tab ('\t'). 
   
-output:   
-- df: data frame    
+- output:   
+ - df: data frame    
 
 &emsp; &emsp;
    	
 ### 2. ConstructNetwork(n_genes, structure)
 **Construct the network structure from either Hierarchical Network or Barabasi-Albert Network in simulation studies**   
 
-input:   
-- n_genes: the number of genes   
-- structure: "HN": Hierarchical Network or  "BAN": Barabasi-Albert Network   
+- input:   
+ - n_genes: the number of genes   
+ - structure: "HN": Hierarchical Network or  "BAN": Barabasi-Albert Network   
 
-output:   
-- adj_all: n_genes * n_genes dimensional symmetric adjacency matrix of network structure.	  
+- output:   
+ - adj_all: n_genes * n_genes dimensional symmetric adjacency matrix of network structure.	  
 	
 
 	
