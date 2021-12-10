@@ -44,7 +44,7 @@ Python version of the Accelerated Proximal Gradient Descent (APGD) algorithm is 
 - Input:
 	- adj: the adjacency matrix of network structure.
 	- a1, a2, b1, b2: parameters for constructing domain [a1, a2] union [b1, b2].  
-		default: a1 = -0.7, a2 = -0.1, b1 = 0.1, b2 = 0.7.  
+		- default: a1 = -0.7, a2 = -0.1, b1 = 0.1, b2 = 0.7.  
 		
 - Output: 
 	- sigma: covariance matrix of target genes according to network structure.  
@@ -63,16 +63,55 @@ Python version of the Accelerated Proximal Gradient Descent (APGD) algorithm is 
 	- sigma: the covariance matrix of target genes according to network structure. You can directly use "GraphicalModel" function to get the covariance matrix.
 	- method: "HN": by Hierarchical Network, "BAN": by Barabasi-Albert Network or "DIY": by user designed.
 	- beta0: numeric value of effect size in simulation settings.  
-		default: None; if method is "HN" or "BAN", input a numerical value.
+		- default: None; if method is "HN" or "BAN", input a numerical value.
 	- beta_true: numeric matrix with the dimension of n_genes * 1 in simulation settings.  
-		default: None; if method is "DIY", input a numerical matrix (n_genes * 1).  
+		- default: None; if method is "DIY", input a numerical matrix (n_genes * 1).  
 		
 - Output:
 	- y: expression levels of a transcription factor (TF).
 	- X: expression levels of n_genes target genes (TGs).
-	- beta: true regulated effect beta for n_genes TGs.
+	- beta: true regulated effect beta for n_genes TGs.  
 
+&emsp; &emsp;
 
+### 5. CalculateAdj(annotated_matrix)
+***Calculate adjacency matrix from an annotation file.***  
+
+- Input:
+	- annotated_matrix: n_genes * n_pathways dimensional matrix that indicates the annotation of genes within pathways information.  
 	
+- Output:
+	- adj: the adjacency matrix of network structure.  
+
+&emsp; &emsp;
+
+### 6. CalculateLaplacian(adj)
+***Calculate Laplacian matrix and symmetric normalized Laplacian matrix from an adjacency matrix.***  
+
+- Input:
+	adj: the adjacency matrix of network structure.  
+	
+- Output:
+	- l: the Laplacian matrix for network structure.
+	- l_norm: the symmetric normalized Laplacian matrix for network structure.  
+
+&emsp; &emsp;
+
+### 7. Lambda_grid(X, y, n_lambda, alpha, loss_func)
+***Simulate a grid set of lambdas for a given alpha in penalized regression.*** 
+
+- Input:
+	- X: expression levels of n_genes target genes (TGs).
+	- y: expression levels of a transcription factor (TF).
+	- n_lambda: the number of lambdas. Positive integers.
+	- alpha: the proportion of l1 norm affects (the numerical values of nonzero coefficients), it's in range (0,1].
+	- loss_func: either "Huber" or "MSE". 
+		- If flag = "Huber", the loss function in penalized regression model is Huber function. 
+		- If flag = "MSE", the loss function in penalized regression model is mean squared errors.  
+		
+- Output:
+	- lambdas: n_lambda length vector of lambdas according to the alpha you provided.  
+
+&emsp; &emsp;
 	
 	
