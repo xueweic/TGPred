@@ -15,4 +15,4 @@ Python version of the Accelerated Proximal Gradient Descent (APGD) algorithm is 
 
 ## Functions
 
-Please refer [APGD_Guide](https://github.com/tobefuture/APGD/blob/09df8f474729b1b6f5f2b3a8a9990925fdb7a448/Python/APGD_Guide.pdf).
+Please refer [APGD_Guide](https://github.com/tobefuture/APGD/blob/main/Python/APGD_Guide.pdf).
