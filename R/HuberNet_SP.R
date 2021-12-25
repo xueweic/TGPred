@@ -64,7 +64,7 @@ HuberNet_SP <- function(X, y, Adj, alphas, n_lambda, B=500,  gamma=1000, niter=2
   ridge_cv <- cv.glmnet(X, y, alpha = 0, lambda = lambda_seq)
   # Best lambda value
   best_lambda <- ridge_cv$lambda.min
-  best_ridge <- glmnet(X, y, alpha = 0, lambda  = best_lambda)
+  best_ridge <- glmnet(X.sub, y.sub, alpha = 0, lambda  = best_lambda)
   beta_hat <- best_ridge$beta@x
   S <- diag(sign(beta_hat))
   SLS <- L_norm * diag(S)
