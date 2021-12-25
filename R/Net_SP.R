@@ -90,7 +90,7 @@ Net_SP <- function(X, y, Adj, alphas, n_lambda, B=500,  gamma=1000, niter=2000,
         pos <- sample(1:n, n/2)
         y.sub <- y[pos,]
         X.sub <- X[pos,]
-        invisible(capture.output(beta_hat_APGD <- Net_Beta(X, y, Adj, lambda, alpha, method="APGD",
+        invisible(capture.output(beta_hat_APGD <- Net_Beta(X.sub, y.sub, Adj, lambda, alpha, method="APGD",
                                   gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, quiet=TRUE)))
         beta_hat.LambdaAlpha[,i.b] <- beta_hat_APGD
       }
