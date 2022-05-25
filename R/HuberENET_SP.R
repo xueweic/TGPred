@@ -10,6 +10,7 @@
 #' @param y expressional levels of a transcription factor (TF)
 #' @param alphas the grid sets of alpha (in [0,1]) used to calculate selection probabilities of genes.
 #' @param n_lambda the number of lambdas
+#' @param ratio the ratio of smallest lambda
 #' @param B the number of half-sample resamplings used to calculate selection probabilities of genes. default: 500
 #' @param gamma initial value of gamma in APGD. default: 1000
 #' @param niter the maximum number of APGD to solve Huber Elastic Net regression. default: 2000
