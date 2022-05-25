@@ -21,9 +21,11 @@
 Lasso_Beta <- function(X, y, lambda0, method="APGD",
                        gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, quiet=FALSE, if.scale=FALSE){
   X <- data.matrix(X)
-  X <- scale(X)
   y <- data.matrix(y)
-  y <- scale(y)
+  if (if.scale == "TRUE"){
+    X <- scale(X)
+    y <- scale(y)
+  }
   # ---- check X y
   if (nrow(X) != nrow(y)){
     stop("Error: Please check the sample size of X and y. They should be the same!")
