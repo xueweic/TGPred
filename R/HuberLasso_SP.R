@@ -21,7 +21,7 @@
 #' @export
 #'
 #' @examples
-HuberLasso_SP <- function(X, y, n_lambda, ratio, B=500,  gamma=1000, niter=2000,
+HuberLasso_SP <- function(X, y, n_lambda, ratio=1e-2, B=500,  gamma=1000, niter=2000,
                          crit_beta=1e-4, crit_obj=1e-8, timer=TRUE){
   X.ori <- data.matrix(X)
   X <- scale(X.ori)
