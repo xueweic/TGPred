@@ -20,7 +20,7 @@
 #' @export
 #'
 #' @examples
-HuberLasso_SP <- function(X, y, n_lambda, B=500,  gamma=1000, niter=2000,
+HuberLasso_SP <- function(X, y, n_lambda, ratio, B=500,  gamma=1000, niter=2000,
                          crit_beta=1e-4, crit_obj=1e-8, timer=TRUE){
   X.ori <- data.matrix(X)
   X <- scale(X.ori)
@@ -46,7 +46,7 @@ HuberLasso_SP <- function(X, y, n_lambda, B=500,  gamma=1000, niter=2000,
   flag <- 0
   start.time <- proc.time()
 
-  lambda_set <- Lambda_grid(X.ori, y.ori, n_lambda, alpha=1, loss_func = "Huber")
+  lambda_set <- Lambda_grid(X.ori, y.ori, n_lambda, alpha=1, loss_func = "Huber", ratio)
   for (i.lambda in 1:length(lambda_set)){
     lambda <- lambda_set[i.lambda]
     flag <- flag + 1
