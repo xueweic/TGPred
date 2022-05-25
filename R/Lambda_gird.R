@@ -7,6 +7,7 @@
 #' @param n_lambda the number of lambdas.
 #' @param alpha the proportion of l1 norm affects (the numerical values of nonzero coefficients). It's in range (0,1].
 #' @param loss_func either "Huber" or "MSE".
+#' @param ratio the ratio of smallest lambda. default: 0.01
 # If loss_func = "Huber", the loss function in penalized regression model is Huber function.
 # If loss_func = "MSE", the loss function in penalized regression model is mean squared errors.
 #'
