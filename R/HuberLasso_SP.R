@@ -9,6 +9,7 @@
 #' @param X expressional levels of n_genes target genes (TGs)
 #' @param y expressional levels of a transcription factor (TF)
 #' @param n_lambda the number of lambdas
+#' @param ratio the ratio of smallest lambda
 #' @param B the number of half-sample resamplings used to calculate selection probabilities of genes. default: 500
 #' @param gamma initial value of gamma in APGD. default: 1000
 #' @param niter the maximum number of APGD to solve Huber Lasso regression. default: 2000
