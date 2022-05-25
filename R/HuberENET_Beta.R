@@ -13,6 +13,7 @@
 #' @param crit_beta converge criterion of change of beta. default: 1e-4
 #' @param crit_obj converge criterion of change of objective function. default: 1e-8
 #' @param quiet decide if exist the output report. default: FALSE
+#' @param if.scale decide if scale the expression levels. default: FALSE
 #'
 #' @return beta: n_genes length vector of estimated regulated effect sizes, where beta_j != 0 indicates j th gene is not selected in HuberENET regression.
 #' @export
@@ -20,11 +21,13 @@
 #' @examples
 #'
 HuberENET_Beta <- function(X, y, lambda0, alpha0, method="APGD",
-                          gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, quiet=FALSE){
+                          gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, quiet=FALSE, if.scale=FALSE){
   X <- data.matrix(X)
-  X <- scale(X)
   y <- data.matrix(y)
-  y <- scale(y)
+  if (if.scale == "TRUE"){
+    X <- scale(X)
+    y <- scale(y)
+  }
   # ---- check X y
   if (nrow(X) != nrow(y)){
     stop("Error: Please check the sample size of X and y. They should be the same!")
