@@ -10,6 +10,7 @@
 #' @param y expressional levels of a transcription factor (TF)
 #' @param alphas the grid sets of alpha (in [0,1]) used to calculate selection probabilities of genes.
 #' @param n_lambda the number of lambdas
+#' @param ratio the ratio of smallest lambda. default: 0.01
 #' @param B the number of half-sample resamplings used to calculate selection probabilities of genes. default: 500
 #' @param gamma initial value of gamma in APGD. default: 1000
 #' @param niter the maximum number of APGD to solve Elastic Net regression. default: 2000
@@ -21,7 +22,7 @@
 #' @export
 #'
 #' @examples
-ENET_SP <- function(X, y, alphas, n_lambda, B=500,  gamma=1000, niter=2000,
+ENET_SP <- function(X, y, alphas, n_lambda, ratio=1e-2, B=500,  gamma=1000, niter=2000,
                     crit_beta=1e-4, crit_obj=1e-8, timer=TRUE){
   X.ori <- data.matrix(X)
   X <- scale(X.ori)
@@ -52,7 +53,7 @@ ENET_SP <- function(X, y, alphas, n_lambda, B=500,  gamma=1000, niter=2000,
   for (i.alpha in 1:n_alpha){
     alpha <- alphas[i.alpha]
 
-    lambda_set <- Lambda_grid(X.ori, y.ori, n_lambda, alpha, loss_func = "MSE")
+    lambda_set <- Lambda_grid(X.ori, y.ori, n_lambda, alpha, loss_func = "MSE", ratio)
     for (i.lambda in 1:length(lambda_set)){
       lambda <- lambda_set[i.lambda]
       flag <- flag + 1
