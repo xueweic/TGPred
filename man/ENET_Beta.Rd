@@ -42,6 +42,9 @@ crit_obj converge criterion of change of objective function. default: 1e-8
   \item{quiet}{
 quiet decide if exist the output report. default: FALSE
 }
+  \item{if.scale}{
+if.scale decide if scale the expression levels. default: FALSE
+} 
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
