@@ -8,7 +8,7 @@ Estimate beta_hat using Huber Elastic Net function
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-HuberENET_Beta(X, y, lambda0, alpha0, method = "APGD", gamma = 1000, niter = 2000, crit_beta = 1e-04, crit_obj = 1e-08, quiet = FALSE)
+HuberENET_Beta(X, y, lambda0, alpha0, method = "APGD", gamma = 1000, niter = 2000, crit_beta = 1e-04, crit_obj = 1e-08, quiet = FALSE, if.scale=FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -42,6 +42,9 @@ converge criterion of change of objective function. default: 1e-8
   \item{quiet}{
 decide if exist the output report. default: FALSE
 }
+  \item{if.scale}{
+if.scale decide if scale the expression levels. default: FALSE
+} 
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
@@ -57,11 +60,11 @@ lambda0 = 200
   
 alpha0 = 0.5
   
-beta_hat_APGD <- HuberENET_Beta(X, y, lambda0, alpha0, method="APGD")
+beta_hat_APGD <- HuberENET_Beta(X, y, lambda0, alpha0, method="APGD", if.scale=TRUE)
   
 library("CVXR")
   
-beta_hat_CVX <- HuberENET_Beta(X, y, lambda0, alpha0,method="CVX")
+beta_hat_CVX <- HuberENET_Beta(X, y, lambda0, alpha0,method="CVX", if.scale=TRUE)
   
 }
 
