@@ -8,7 +8,7 @@ Estimate selection probability using HuberENET function solving by APGD
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-HuberENET_SP(X, y, alphas, n_lambda, B = 500, gamma = 1000, niter = 2000, crit_beta = 1e-04, crit_obj = 1e-08, timer = TRUE)
+HuberENET_SP(X, y, alphas, n_lambda, ratio=1e-2, B = 500, gamma = 1000, niter = 2000, crit_beta = 1e-04, crit_obj = 1e-08, timer = TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -23,6 +23,9 @@ the grid sets of alpha (in [0,1]) used to calculate selection probabilities of g
 }
   \item{n_lambda}{
 the number of lambdas
+}
+  \item{ratio}{
+the ratio of the smallest lambda. default: 0.01
 }
   \item{B}{
 the number of half-sample resamplings used to calculate selection probabilities of genes. default: 500
@@ -58,6 +61,8 @@ n_lambda <- 10
   
 B0 <- 100
   
-SP_HuberENET = HuberENET_SP(X, y, alphas, n_lambda, B=B0, gamma=1000, niter=2000, timer=FALSE)
+ratio <- 0.01, 
+  
+SP_HuberENET = HuberENET_SP(X, y, alphas, n_lambda, ratio, B=B0, gamma=1000, niter=2000, timer=FALSE)
 }
 
