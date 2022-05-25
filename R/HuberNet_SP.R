@@ -11,6 +11,7 @@
 #' @param Adj the adjacency matrix of network structure.
 #' @param alphas the grid sets of alpha (in [0,1]) used to calculate selection probabilities of genes.
 #' @param n_lambda the number of lambdas
+#' @param ratio the ratio of smallest lambda
 #' @param B the number of half-sample resamplings used to calculate selection probabilities of genes. default: 500
 #' @param gamma initial value of gamma in APGD. default: 1000
 #' @param niter the maximum number of APGD to solve HuberNet regression. default: 2000
@@ -22,7 +23,7 @@
 #' @export
 #'
 #' @examples
-HuberNet_SP <- function(X, y, Adj, alphas, n_lambda, B=500,  gamma=1000, niter=2000,
+HuberNet_SP <- function(X, y, Adj, alphas, n_lambda, ratio, B=500,  gamma=1000, niter=2000,
                         crit_beta=1e-4, crit_obj=1e-8, timer=TRUE){
   X.ori <- data.matrix(X)
   X <- scale(X.ori)
@@ -81,7 +82,7 @@ HuberNet_SP <- function(X, y, Adj, alphas, n_lambda, B=500,  gamma=1000, niter=2
   for (i.alpha in 1:n_alpha){
     alpha <- alphas[i.alpha]
 
-    lambda_set <- Lambda_grid(X.ori, y.ori, n_lambda, alpha, loss_func = "Huber")
+    lambda_set <- Lambda_grid(X.ori, y.ori, n_lambda, alpha, loss_func = "Huber", ratio)
     for (i.lambda in 1:length(lambda_set)){
       lambda <- lambda_set[i.lambda]
       flag <- flag + 1
