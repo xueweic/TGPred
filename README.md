@@ -81,14 +81,14 @@ Calculate the estimated regression coefficients $\hat{\beta}$ using one of metho
 ``` r
 lambda0 = 200
 alpha0 = 0.5
-beta_hat_APGD <- HuberNet_Beta(X, y, Adj, lambda0, alpha0, method="APGD", gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8)
+beta_hat_APGD <- HuberNet_Beta(X, y, Adj, lambda0, alpha0, method="APGD", if.scale=TRUE)
 plot(beta_hat_APGD)
 ```
 <img src="man/figures/Beta_hat_APGD.jpeg" width="100%" />
 
 ``` r
 library("CVXR")
-beta_hat_CVX <- HuberNet_Beta(X, y, Adj, lambda0, alpha0, method="CVX")
+beta_hat_CVX <- HuberNet_Beta(X, y, Adj, lambda0, alpha0, method="CVX", if.scale=TRUE)
 plot(beta_hat_CVX)
 ```
 <img src="man/figures/Beta_hat_CVX.jpeg" width="100%" />
@@ -98,9 +98,9 @@ plot(beta_hat_CVX)
 ``` r
 lambda0 = 200
 alpha0 = 0.5
-beta_hat_APGD <- HuberENET_Beta(X, y, lambda0, alpha0, method="APGD")
+beta_hat_APGD <- HuberENET_Beta(X, y, lambda0, alpha0, method="APGD", if.scale=TRUE)
 library("CVXR")
-beta_hat_CVX <- HuberENET_Beta(X, y, lambda0, alpha0, method="CVX")
+beta_hat_CVX <- HuberENET_Beta(X, y, lambda0, alpha0, method="CVX", if.scale=TRUE)
 ```
 
 
@@ -108,9 +108,9 @@ beta_hat_CVX <- HuberENET_Beta(X, y, lambda0, alpha0, method="CVX")
 
 ``` r
 lambda0 = 200
-beta_hat_APGD <- HuberLasso_Beta(X, y, lambda0, method="APGD")
+beta_hat_APGD <- HuberLasso_Beta(X, y, lambda0, method="APGD", if.scale=TRUE)
 library("CVXR")
-beta_hat_CVX <- HuberLasso_Beta(X, y, lambda0, method="CVX")
+beta_hat_CVX <- HuberLasso_Beta(X, y, lambda0, method="CVX", if.scale=TRUE)
 ```
 
 - **ENET**: Mean square error loss function along with Elastic Net penalty function.
@@ -118,18 +118,18 @@ beta_hat_CVX <- HuberLasso_Beta(X, y, lambda0, method="CVX")
 ``` r
 lambda0 = 200
 alpha0 = 0.5
-beta_hat_APGD <- ENET_Beta(X, y, lambda0, alpha0, method="APGD")
+beta_hat_APGD <- ENET_Beta(X, y, lambda0, alpha0, method="APGD", if.scale=TRUE)
 library("CVXR")
-beta_hat_CVX <- ENET_Beta(X, y, lambda0, alpha0, method="CVX")
+beta_hat_CVX <- ENET_Beta(X, y, lambda0, alpha0, method="CVX", if.scale=TRUE)
 ```
 
 - **Lasso**: Mean square error loss function along with Lasso penalty function.
 
 ``` r
 lambda0 = 200
-beta_hat_APGD <- Lasso_Beta(X, y, lambda0, method="APGD")
+beta_hat_APGD <- Lasso_Beta(X, y, lambda0, method="APGD", if.scale=TRUE)
 library("CVXR")
-beta_hat_CVX <- Lasso_Beta(X, y, lambda0, method="CVX")
+beta_hat_CVX <- Lasso_Beta(X, y, lambda0, method="CVX", if.scale=TRUE)
 ```
 
 - **Net**: Mean square error loss function along with Network-based penalty function.
@@ -137,9 +137,9 @@ beta_hat_CVX <- Lasso_Beta(X, y, lambda0, method="CVX")
 ``` r
 lambda0 = 200
 alpha0 = 0.5
-beta_hat_APGD <- Net_Beta(X, y, Adj, lambda0, alpha0, method="APGD")
+beta_hat_APGD <- Net_Beta(X, y, Adj, lambda0, alpha0, method="APGD", if.scale=TRUE)
 library("CVXR")
-beta_hat_CVX <- Net_Beta(X, y, Adj,lambda0, alpha0, method="CVX")
+beta_hat_CVX <- Net_Beta(X, y, Adj,lambda0, alpha0, method="CVX", if.scale=TRUE)
 ```
 
 
