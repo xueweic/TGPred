@@ -16,6 +16,7 @@
 #' @param crit_beta converge criterion of change of beta. default: 1e-4
 #' @param crit_obj converge criterion of change of objective function. default: 1e-8
 #' @param quiet decide if exist the output report. default: FALSE
+#' @param if.scale decide if scale the expression levels. default: FALSE
 #'
 #' @return beta: n_genes length vector of estimated regulated effect sizes, where beta_j != 0 indicates j th gene is not selected in Net regression.
 #' @export
@@ -23,7 +24,7 @@
 #' @examples
 #'
 Net_Beta <- function(X, y, Adj, lambda0, alpha0, method="APGD",
-                     gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, quiet=FALSE){
+                     gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, quiet=FALSE, if.scale=FALSE){
   X <- data.matrix(X)
   X <- scale(X)
   y <- data.matrix(y)
