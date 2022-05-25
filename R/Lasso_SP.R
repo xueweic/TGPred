@@ -9,6 +9,7 @@
 #' @param X expressional levels of n_genes target genes (TGs)
 #' @param y expressional levels of a transcription factor (TF)
 #' @param n_lambda the number of lambdas
+#' @param ratio the ratio of smallest lambda. default: 0.01
 #' @param B the number of half-sample resamplings used to calculate selection probabilities of genes. default: 500
 #' @param gamma initial value of gamma in APGD. default: 1000
 #' @param niter the maximum number of APGD to solve Lasso regression. default: 2000
@@ -20,7 +21,7 @@
 #' @export
 #'
 #' @examples
-Lasso_SP <- function(X, y, n_lambda, B=500,  gamma=1000, niter=2000,
+Lasso_SP <- function(X, y, n_lambda, ratio=1e-2, B=500,  gamma=1000, niter=2000,
                           crit_beta=1e-4, crit_obj=1e-8, timer=TRUE){
   X.ori <- data.matrix(X)
   X <- scale(X.ori)
@@ -45,7 +46,7 @@ Lasso_SP <- function(X, y, n_lambda, B=500,  gamma=1000, niter=2000,
   flag <- 0
   start.time <- proc.time()
 
-  lambda_set <- Lambda_grid(X.ori, y.ori, n_lambda, alpha=1, loss_func = "MSE")
+  lambda_set <- Lambda_grid(X.ori, y.ori, n_lambda, alpha=1, loss_func = "MSE", ratio)
   for (i.lambda in 1:length(lambda_set)){
     lambda <- lambda_set[i.lambda]
     flag <- flag + 1
