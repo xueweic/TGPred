@@ -14,7 +14,7 @@
 #' @export
 #'
 #' @examples
-Lambda_grid <- function(X, y, n_lambda, alpha, loss_func) {
+Lambda_grid <- function(X, y, n_lambda, alpha, loss_func, ratio = 1e-2) {
   X <- as.matrix(X)
   y <- as.matrix(y)
   ## Check X & y
@@ -29,7 +29,6 @@ Lambda_grid <- function(X, y, n_lambda, alpha, loss_func) {
   }
   X <- scale(X)
   y <- scale(y)
-  ratio <- 0.01
   ## Check loss function
   # Use Huber function
   if (loss_func == "Huber") {
