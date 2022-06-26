@@ -76,8 +76,8 @@ res = SimulationData(N_sample, N_genes, Adj, Sigma1, "HN", beta0 = 1)
 
 Calculate the estimated regression coefficients <img src="https://render.githubusercontent.com/render/math?math={\hat{\beta}}#gh-light-mode-only">
 <img src="https://render.githubusercontent.com/render/math?math={\color{white}\hat{\beta}}##gh-dark-mode-only"> using one of methods solving by APGD or CVX for a given set of ${\alpha_0}$ and $\lambda_0$.
-<img src="https://render.githubusercontent.com/render/math?math={P(A|B)=\frac{\P(B|A)\P(A)}{\P(B|A)\P(A)\%2BP(B|\neg A)\P(\neg A)}}##gh-light-mode-only">
-<img src="https://render.githubusercontent.com/render/math?math={\color{white}\P(A|B)=\frac{\P(B|A)\P(A)}{\P(B|A)\P(A)\%2BP(B|\neg A)\P(\neg A)}}#gh-dark-mode-only">
+<img src="https://render.githubusercontent.com/render/math?math={\hat{\beta}}##gh-light-mode-only">
+<img src="https://render.githubusercontent.com/render/math?math={\color{white}\hat{\beta}}#gh-dark-mode-only">
 
 - **HuberNet**: Huber loss function along with Network-based penalty function.
 
