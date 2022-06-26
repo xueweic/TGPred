@@ -74,7 +74,7 @@ res = SimulationData(N_sample, N_genes, Adj, Sigma1, "HN", beta0 = 1)
 
 ### 2. Estimate Regression Coefficients by APGD or CVX
 
-Calculate the estimated regression coefficients ![\sum_{\forall i}{x_i^{2}}](https://latex.codecogs.com/svg.latex?%5Csum_%7B%5Cforall+i%7D%7Bx_i%5E%7B2%7D%7D) using one of methods solving by APGD or CVX for a given set of $\alpha_0$ and $\lambda_0$.
+Calculate the estimated regression coefficients ![\sum_{\forall i}{x_i^{2}}](https://latex.codecogs.com/svg.image?%5Cwidehat%7B%5Cbeta%20%7D) using one of methods solving by APGD or CVX for a given set of $\alpha_0$ and $\lambda_0$.
 
 - **HuberNet**: Huber loss function along with Network-based penalty function.
 
