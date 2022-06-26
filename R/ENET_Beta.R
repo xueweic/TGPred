@@ -95,7 +95,7 @@ ENET_Beta <- function(X, y, lambda0, alpha0, method="APGD",
         break
       }
     }
-    if (quiet==FALSE && k == niter){
+    if (k == niter){
       print("Waining: Setting number of iterations doesn't reach to the convergency. Please set larger 'niter'!")
     }
     beta_hat <- beta_est[,k]
