@@ -4,9 +4,6 @@
 # APGD v.0.1.0
 
 <!-- badges: start -->
-<script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-svg.js">
-</script>
 
 The Accelerated Proximal Gradient Descent (APGD) algorithm is a **R** package to solve the penalized regression models, including 
 
