@@ -74,7 +74,7 @@ res = SimulationData(N_sample, N_genes, Adj, Sigma1, "HN", beta0 = 1)
 
 ### 2. Estimate Regression Coefficients by APGD or CVX
 
-Calculate the estimated regression coefficients `$\hat{\beta}$` using one of methods solving by APGD or CVX for a given set of $\alpha_0$ and $\lambda_0$.
+Calculate the estimated regression coefficients `$\hat{\beta}$` using one of methods solving by APGD or CVX for a given set of `$\alpha_0$` and `$\lambda_0$`.
 
 - **HuberNet**: Huber loss function along with Network-based penalty function.
 
@@ -145,7 +145,7 @@ beta_hat_CVX <- Net_Beta(X, y, Adj,lambda0, alpha0, method="CVX", if.scale=TRUE)
 
 ### 3. Calculate Selection Probabilities by APGD
 
-To avoid selecting the optimal tuning parameters $\lambda$ and $\alpha$, we can use half-sample resampling method to calculate the selection probabilities of each predictor. The grid of $\lambda$s for a given $\alpha$ from the proposed Huber or MSE loss functions can be calculated by
+To avoid selecting the optimal tuning parameters `$\lambda$` and `$\alpha$`, we can use half-sample resampling method to calculate the selection probabilities of each predictor. The grid of `$\lambda$`s for a given `$\alpha$` from the proposed Huber or MSE loss functions can be calculated by
 
 ``` r
 alpha <- 0.5
