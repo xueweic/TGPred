@@ -4,7 +4,7 @@
 
 <!-- badges: start -->
 
-Python version of the Accelerated Proximal Gradient Descent (APGD) algorithm is to solve the penalized regression models, including \alpha
+Python version of the Accelerated Proximal Gradient Descent (APGD) algorithm is to solve the penalized regression models, including &alpha
 
 - **HuberNet**: Huber loss function along with Network-based penalty function;
 - **HuberLasso**: Huber loss function along with Lasso penalty function;
