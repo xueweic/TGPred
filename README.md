@@ -1,7 +1,4 @@
 
-<head>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-<head>
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # APGD v.0.1.0
