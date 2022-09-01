@@ -73,7 +73,7 @@ MSEENET_SP <- function(X, y, alphas, n_lambda, ratio=1e-2, B=500,  gamma=1000, n
     }
   }
   SP.ENET <- apply(SP.LambdaAlpha, 1, max)
-  print("Done with ENET by APGD method!")
+  print("Done with MSEENET by APGD method!")
   end.time <- proc.time()
   if (timer == TRUE){
     diff <- end.time - start.time
