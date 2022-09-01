@@ -4,7 +4,7 @@
 
 
 
-#' Estimate selection probability using ENET function solving by APGD
+#' Estimate selection probability using MSEENET function solving by APGD
 #'
 #' @param X expressional levels of n_genes target genes (TGs)
 #' @param y expressional levels of a transcription factor (TF)
@@ -22,7 +22,7 @@
 #' @export
 #'
 #' @examples
-ENET_SP <- function(X, y, alphas, n_lambda, ratio=1e-2, B=500,  gamma=1000, niter=2000,
+MSEENET_SP <- function(X, y, alphas, n_lambda, ratio=1e-2, B=500,  gamma=1000, niter=2000,
                     crit_beta=1e-4, crit_obj=1e-8, timer=TRUE){
   X.ori <- data.matrix(X)
   X <- scale(X.ori)
@@ -44,8 +44,8 @@ ENET_SP <- function(X, y, alphas, n_lambda, ratio=1e-2, B=500,  gamma=1000, nite
   n <- nrow(X)
   p <- ncol(X)
 
-  ## Start Huber-Net by APGD method
-  print("Start calculating selection probability using ENET by APGD method:")
+  ## Start MSEENET by APGD method
+  print("Start calculating selection probability using MSEENET by APGD method:")
   n_alpha <- length(alphas)
   SP.LambdaAlpha <- matrix(NA, nrow = p, ncol = n_lambda*n_alpha)
   flag <- 0
@@ -64,7 +64,7 @@ ENET_SP <- function(X, y, alphas, n_lambda, ratio=1e-2, B=500,  gamma=1000, nite
         pos <- sample(1:n, n/2)
         y.sub <- y[pos,]
         X.sub <- X[pos,]
-        invisible(capture.output(beta_hat_APGD <- ENET_Beta(X.sub, y.sub, lambda, alpha, method="APGD",
+        invisible(capture.output(beta_hat_APGD <- MSEENET_Beta(X.sub, y.sub, lambda, alpha, method="APGD",
                                    gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, quiet=TRUE)))
         beta_hat.LambdaAlpha[,i.b] <- beta_hat_APGD
       }
