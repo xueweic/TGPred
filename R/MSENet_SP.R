@@ -4,7 +4,7 @@
 
 
 
-#' Estimate selection probability using Net function solving by APGD
+#' Estimate selection probability using MSENet function solving by APGD
 #'
 #' @param X expressional levels of n_genes target genes (TGs)
 #' @param y expressional levels of a transcription factor (TF)
@@ -23,7 +23,7 @@
 #' @export
 #'
 #' @examples
-Net_SP <- function(X, y, Adj, alphas, n_lambda, ratio=1e-2, B=500,  gamma=1000, niter=2000,
+MSENet_SP <- function(X, y, Adj, alphas, n_lambda, ratio=1e-2, B=500,  gamma=1000, niter=2000,
                         crit_beta=1e-4, crit_obj=1e-8, timer=TRUE){
   X.ori <- data.matrix(X)
   X <- scale(X.ori)
@@ -71,8 +71,8 @@ Net_SP <- function(X, y, Adj, alphas, n_lambda, ratio=1e-2, B=500,  gamma=1000, 
   SLS <- L_norm * diag(S)
   SLS <- t(SLS) * diag(S)
 
-  ## Start Huber-Net by APGD method
-  print("Start calculating selection probability using Net by APGD method:")
+  ## Start MSENet by APGD method
+  print("Start calculating selection probability using MSENet by APGD method:")
   n_alpha <- length(alphas)
   SP.LambdaAlpha <- matrix(NA, nrow = p, ncol = n_lambda*n_alpha)
   flag <- 0
@@ -91,7 +91,7 @@ Net_SP <- function(X, y, Adj, alphas, n_lambda, ratio=1e-2, B=500,  gamma=1000, 
         pos <- sample(1:n, n/2)
         y.sub <- y[pos,]
         X.sub <- X[pos,]
-        invisible(capture.output(beta_hat_APGD <- Net_Beta(X.sub, y.sub, Adj, lambda, alpha, method="APGD",
+        invisible(capture.output(beta_hat_APGD <- MSENet_Beta(X.sub, y.sub, Adj, lambda, alpha, method="APGD",
                                   gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, quiet=TRUE)))
         beta_hat.LambdaAlpha[,i.b] <- beta_hat_APGD
       }
@@ -100,7 +100,7 @@ Net_SP <- function(X, y, Adj, alphas, n_lambda, ratio=1e-2, B=500,  gamma=1000, 
     }
   }
   SP.Net <- apply(SP.LambdaAlpha, 1, max)
-  print("Done with Net by APGD method!")
+  print("Done with MSENet by APGD method!")
   end.time <- proc.time()
   if (timer == TRUE){
     diff <- end.time - start.time
