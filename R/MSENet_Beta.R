@@ -3,7 +3,7 @@
 
 
 
-#' Estimate beta_hat using Net function
+#' Estimate beta_hat using MSE loss along with Net penalty function
 #'
 #' @param X expressional levels of n_genes target genes (TGs)
 #' @param y expressional levels of a transcription factor (TF)
@@ -23,7 +23,7 @@
 #'
 #' @examples
 #'
-Net_Beta <- function(X, y, Adj, lambda0, alpha0, method="APGD",
+MSENet_Beta <- function(X, y, Adj, lambda0, alpha0, method="APGD",
                      gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, quiet=FALSE, if.scale=FALSE){
   X <- data.matrix(X)
   y <- data.matrix(y)
@@ -86,7 +86,7 @@ Net_Beta <- function(X, y, Adj, lambda0, alpha0, method="APGD",
   SLS <- L_norm * diag(S)
   SLS <- t(SLS) * diag(S)
   if (quiet == FALSE){
-    print(paste("Start calculating beta using Net by :", method))
+    print(paste("Start calculating beta using MSENet by :", method))
   }
 
   # - APGD
