@@ -14,7 +14,7 @@ TGPred is a **R** package including six efficient methods for predicting target 
 - **MSEENET**: Mean square error loss function along with Elastic Net penalty function;
 - **MSELasso**: Mean square error loss function along with Lasso penalty function;
 - **MSENet**: Mean square error loss function along with Network-based penalty function.
-- **APGD**: The Accelerated Proximal Gradient Descent (APGD) algorithm to solve the above six penalized regression model.
+- **APGD**: The Accelerated Proximal Gradient Descent (APGD) algorithm to solve the above six penalized regression models.
 
 We also have [**Python version**](https://github.com/tobefuture/TGPred), please see the following link for the guideline of Python version https://github.com/tobefuture/TGPred.
 
