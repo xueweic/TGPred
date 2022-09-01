@@ -4,7 +4,7 @@
 
 
 
-#' Estimate selection probability using Lasso function solving by APGD
+#' Estimate selection probability using MSELasso function solving by APGD
 #'
 #' @param X expressional levels of n_genes target genes (TGs)
 #' @param y expressional levels of a transcription factor (TF)
@@ -21,7 +21,7 @@
 #' @export
 #'
 #' @examples
-Lasso_SP <- function(X, y, n_lambda, ratio=1e-2, B=500,  gamma=1000, niter=2000,
+MSELasso_SP <- function(X, y, n_lambda, ratio=1e-2, B=500,  gamma=1000, niter=2000,
                           crit_beta=1e-4, crit_obj=1e-8, timer=TRUE){
   X.ori <- data.matrix(X)
   X <- scale(X.ori)
@@ -40,7 +40,7 @@ Lasso_SP <- function(X, y, n_lambda, ratio=1e-2, B=500,  gamma=1000, niter=2000,
   p <- ncol(X)
 
 
-  ## Start Huber-Net by APGD method
+  ## Start MSELasso by APGD method
   print("Start calculating selection probability using Lasso by APGD method:")
   SP.LambdaAlpha <- matrix(NA, nrow = p, ncol = n_lambda)
   flag <- 0
@@ -57,7 +57,7 @@ Lasso_SP <- function(X, y, n_lambda, ratio=1e-2, B=500,  gamma=1000, niter=2000,
       pos <- sample(1:n, n/2)
       y.sub <- y[pos,]
       X.sub <- X[pos,]
-      invisible(capture.output(beta_hat_APGD <- Lasso_Beta(X.sub, y.sub, lambda, method="APGD",
+      invisible(capture.output(beta_hat_APGD <- MSELasso_Beta(X.sub, y.sub, lambda, method="APGD",
                                   gamma=1000, niter=2000, crit_beta=1e-4, crit_obj=1e-8, quiet=TRUE)))
       beta_hat.LambdaAlpha[,i.b] <- beta_hat_APGD
     }
