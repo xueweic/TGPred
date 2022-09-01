@@ -66,7 +66,7 @@ MSELasso_SP <- function(X, y, n_lambda, ratio=1e-2, B=500,  gamma=1000, niter=20
   }
 
   SP.Lasso <- apply(SP.LambdaAlpha, 1, max)
-  print("Done with Lasso by APGD method!")
+  print("Done with MSELasso by APGD method!")
   end.time <- proc.time()
   if (timer == TRUE){
     diff <- end.time - start.time
