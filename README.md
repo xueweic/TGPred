@@ -11,9 +11,9 @@ TGPred is a **R** package including six efficient methods for predicting target 
 - **HuberNet**: Huber loss function along with Network-based penalty function;
 - **HuberLasso**: Huber loss function along with Lasso penalty function;
 - **HuberENET**: Huber loss function along with Elastic Net penalty function;
-- **ENET**: Mean square error loss function along with Elastic Net penalty function;
-- **Lasso**: Mean square error loss function along with Lasso penalty function;
-- **Net**: Mean square error loss function along with Network-based penalty function.
+- **MSEENET**: Mean square error loss function along with Elastic Net penalty function;
+- **MSELasso**: Mean square error loss function along with Lasso penalty function;
+- **MSENet**: Mean square error loss function along with Network-based penalty function.
 - **APGD**: The Accelerated Proximal Gradient Descent (APGD) algorithm to solve the above six penalized regression model.
 
 We also have [**Python version**](https://github.com/tobefuture/TGPred), please see the following link for the guideline of Python version https://github.com/tobefuture/TGPred.
@@ -120,18 +120,18 @@ beta_hat_CVX <- HuberLasso_Beta(X, y, lambda0, method="CVX", if.scale=TRUE)
 ``` r
 lambda0 = 200
 alpha0 = 0.5
-beta_hat_APGD <- ENET_Beta(X, y, lambda0, alpha0, method="APGD", if.scale=TRUE)
+beta_hat_APGD <- MSEENET_Beta(X, y, lambda0, alpha0, method="APGD", if.scale=TRUE)
 library("CVXR")
-beta_hat_CVX <- ENET_Beta(X, y, lambda0, alpha0, method="CVX", if.scale=TRUE)
+beta_hat_CVX <- MSEENET_Beta(X, y, lambda0, alpha0, method="CVX", if.scale=TRUE)
 ```
 
 - **Lasso**: Mean square error loss function along with Lasso penalty function.
 
 ``` r
 lambda0 = 200
-beta_hat_APGD <- Lasso_Beta(X, y, lambda0, method="APGD", if.scale=TRUE)
+beta_hat_APGD <- MSELasso_Beta(X, y, lambda0, method="APGD", if.scale=TRUE)
 library("CVXR")
-beta_hat_CVX <- Lasso_Beta(X, y, lambda0, method="CVX", if.scale=TRUE)
+beta_hat_CVX <- MSELasso_Beta(X, y, lambda0, method="CVX", if.scale=TRUE)
 ```
 
 - **Net**: Mean square error loss function along with Network-based penalty function.
@@ -139,9 +139,9 @@ beta_hat_CVX <- Lasso_Beta(X, y, lambda0, method="CVX", if.scale=TRUE)
 ``` r
 lambda0 = 200
 alpha0 = 0.5
-beta_hat_APGD <- Net_Beta(X, y, Adj, lambda0, alpha0, method="APGD", if.scale=TRUE)
+beta_hat_APGD <- MSENet_Beta(X, y, Adj, lambda0, alpha0, method="APGD", if.scale=TRUE)
 library("CVXR")
-beta_hat_CVX <- Net_Beta(X, y, Adj,lambda0, alpha0, method="CVX", if.scale=TRUE)
+beta_hat_CVX <- MSENet_Beta(X, y, Adj,lambda0, alpha0, method="CVX", if.scale=TRUE)
 ```
 
 
@@ -171,17 +171,17 @@ SP_HuberNet = HuberNet_SP(X, y, Adj ,alphas, n_lambda, ratio, B=B0, gamma=1000, 
 SP_HuberENET = HuberENET_SP(X, y, alphas, n_lambda, ratio, B=B0, gamma=1000, niter=2000, timer=FALSE)
 
 ## Net
-SP_Net = Net_SP(X, y, Adj ,alphas, n_lambda, ratio, B=B0, gamma=1000, niter=2000, timer=FALSE)
+SP_Net = MSENet_SP(X, y, Adj ,alphas, n_lambda, ratio, B=B0, gamma=1000, niter=2000, timer=FALSE)
 
 ## ENET
-SP_ENET = ENET_SP(X, y, alphas, n_lambda, ratio, B=B0, gamma=1000, niter=2000, timer=FALSE)
+SP_ENET = MSEENET_SP(X, y, alphas, n_lambda, ratio, B=B0, gamma=1000, niter=2000, timer=FALSE)
 
 ## HuberLasso
 n_lambda <- 50
 SP_HuberLasso = HuberLasso_SP(X, y, n_lambda, ratio, B=B0, gamma=1000, niter=2000, timer=FALSE)
 
 ## Lasso
-SP_Lasso = Lasso_SP(X, y, n_lambda, ratio, B=B0, gamma=1000, niter=2000, timer=FALSE)
+SP_Lasso = MSELasso_SP(X, y, n_lambda, ratio, B=B0, gamma=1000, niter=2000, timer=FALSE)
 ```
 
 ### 4. Real Data Analysis
