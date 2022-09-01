@@ -1,11 +1,12 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# APGD v.0.1.0
+# TGPred v.0.1.0
 
 <!-- badges: start -->
 
-The Accelerated Proximal Gradient Descent (APGD) algorithm is a **R** package to solve the penalized regression models, including 
+TGPred is a **R** package including six efficient methods for predicting target genes of a transcription factor by integrating statistics, machine learning, and optimization
+
 
 - **HuberNet**: Huber loss function along with Network-based penalty function;
 - **HuberLasso**: Huber loss function along with Lasso penalty function;
@@ -13,19 +14,20 @@ The Accelerated Proximal Gradient Descent (APGD) algorithm is a **R** package to
 - **ENET**: Mean square error loss function along with Elastic Net penalty function;
 - **Lasso**: Mean square error loss function along with Lasso penalty function;
 - **Net**: Mean square error loss function along with Network-based penalty function.
+- **APGD**: The Accelerated Proximal Gradient Descent (APGD) algorithm to solve the above six penalized regression model.
 
-We also have [**Python version**](https://github.com/tobefuture/APGD), please see the following link for the guideline of Python version https://github.com/tobefuture/APGD.
+We also have [**Python version**](https://github.com/tobefuture/TGPred), please see the following link for the guideline of Python version https://github.com/tobefuture/TGPred.
 
 ## Installation
 
-You can install the released version of APGD from Github with:
+You can install the released version of TGPred from Github with:
 
 ``` r
-devtools::install_github("xueweic/APGD")
+devtools::install_github("xueweic/TGPred")
 ```
 
 ## Reference
-Xuewei Cao<sup>+</sup>, Ling Zhang<sup>+</sup>, Kui Zhang, Sanzhen Liu, Qiuying Sha*, Hairong Wei*. HuberNet function for interfering target genes of regulatory genes using high-throughput gene expression data.
+Xuewei Cao<sup>+</sup>, Ling Zhang<sup>+</sup>, Kui Zhang, Sanzhen Liu, Qiuying Sha*, Hairong Wei*. TGPred：Efficient methods for predicting target genes of a transcription factor by integrating statistics, machine learning, and optimization.
 
 <sub> <sup>+</sup> These authors have contributed equally to this work </sub>
 
@@ -41,7 +43,7 @@ Xuewei Cao<sup>+</sup>, Ling Zhang<sup>+</sup>, Kui Zhang, Sanzhen Liu, Qiuying 
 - In Barabasi-Albert Network, the number of genes must be the integer times 10.
 
 ``` r
-library(APGD)
+library(TGPred)
 N_genes = 200
 Adj = ConstructNetwork(N_genes, "HN")
 Adj = ConstructNetwork(N_genes, "BAN")
