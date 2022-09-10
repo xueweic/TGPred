@@ -13,7 +13,7 @@ Python version of the Accelerated Proximal Gradient Descent (APGD) algorithm is 
 - **Lasso**: Mean square error loss function along with Lasso penalty function;
 - **Net**: Mean square error loss function along with Network-based penalty function.
 
-We also have [**R version**](https://github.com/xueweic/APGD), please see the following link for the guideline of R version https://github.com/xueweic/APGD.
+We also have [**R version**](https://github.com/xueweic/TGPred), please see the following link for the guideline of R version https://github.com/xueweic/TGPred.
 
 &emsp;&emsp;
 
