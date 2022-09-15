@@ -195,8 +195,8 @@ SP_Lasso = MSELasso_SP(X, y, n_lambda, ratio, B=B0, gamma=1000, niter=2000, time
 Example code for HuberNet penalized regression.
 
 ``` r
-library(APGD)
-Sample_data <- APGD::Sample_data
+library(TGPred)
+Sample_data <- TGPred::Sample_data
 X <- Sample_data$PWG
 y <- Sample_data$TF
 Annotation <- Sample_data$Annotation
