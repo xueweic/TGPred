@@ -116,7 +116,7 @@ library("CVXR")
 beta_hat_CVX <- HuberLasso_Beta(X, y, lambda0, method="CVX", if.scale=TRUE)
 ```
 
-- **ENET**: Mean square error loss function along with Elastic Net penalty function.
+- **MSEENET**: Mean square error loss function along with Elastic Net penalty function.
 
 ``` r
 lambda0 = 200
@@ -126,7 +126,7 @@ library("CVXR")
 beta_hat_CVX <- MSEENET_Beta(X, y, lambda0, alpha0, method="CVX", if.scale=TRUE)
 ```
 
-- **Lasso**: Mean square error loss function along with Lasso penalty function.
+- **MSELasso**: Mean square error loss function along with Lasso penalty function.
 
 ``` r
 lambda0 = 200
@@ -135,7 +135,7 @@ library("CVXR")
 beta_hat_CVX <- MSELasso_Beta(X, y, lambda0, method="CVX", if.scale=TRUE)
 ```
 
-- **Net**: Mean square error loss function along with Network-based penalty function.
+- **MSENet**: Mean square error loss function along with Network-based penalty function.
 
 ``` r
 lambda0 = 200
@@ -171,17 +171,17 @@ SP_HuberNet = HuberNet_SP(X, y, Adj ,alphas, n_lambda, ratio, B=B0, gamma=1000, 
 ## HuberENET
 SP_HuberENET = HuberENET_SP(X, y, alphas, n_lambda, ratio, B=B0, gamma=1000, niter=2000, timer=FALSE)
 
-## Net
+## MSENet
 SP_Net = MSENet_SP(X, y, Adj ,alphas, n_lambda, ratio, B=B0, gamma=1000, niter=2000, timer=FALSE)
 
-## ENET
+## MSEENET
 SP_ENET = MSEENET_SP(X, y, alphas, n_lambda, ratio, B=B0, gamma=1000, niter=2000, timer=FALSE)
 
 ## HuberLasso
 n_lambda <- 50
 SP_HuberLasso = HuberLasso_SP(X, y, n_lambda, ratio, B=B0, gamma=1000, niter=2000, timer=FALSE)
 
-## Lasso
+## MSELasso
 SP_Lasso = MSELasso_SP(X, y, n_lambda, ratio, B=B0, gamma=1000, niter=2000, timer=FALSE)
 ```
 
