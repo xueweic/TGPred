@@ -1,14 +1,14 @@
-\name{ENET_SP}
-\alias{ENET_SP}
+\name{MSEENET_SP}
+\alias{MSEENET_SP}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Estimate selection probability using ENET function solving by APGD
+Estimate selection probability using MSE loss function along with ENET penalty function solving by APGD
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-ENET_SP(X, y, alphas, n_lambda, ratio=1e-2, B = 500, gamma = 1000, niter = 2000, crit_beta = 1e-04, crit_obj = 1e-08, timer = TRUE)
+MSEENET_SP(X, y, alphas, n_lambda, ratio=1e-2, B = 500, gamma = 1000, niter = 2000, crit_beta = 1e-04, crit_obj = 1e-08, timer = TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -78,5 +78,5 @@ B0 <- 100
   
 ratio <- 0.01
 
-SP_ENET = ENET_SP(X, y, alphas, n_lambda, ratio, B=B0, gamma=1000, niter=2000, timer=FALSE)
+SP_ENET = MSEENET_SP(X, y, alphas, n_lambda, ratio, B=B0, gamma=1000, niter=2000, timer=FALSE)
 }
