@@ -63,7 +63,7 @@ L_norm <- res$L_norm
 
 
 ``` r
-N_samples <- 300
+N_sample <- 300
 res = SimulationData(N_sample, N_genes, Adj, Sigma1, "BAN", beta0 = 1)
 y = res$y
 X = res$X
