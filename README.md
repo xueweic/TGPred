@@ -1,30 +1,23 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# APGD v.0.1.0 (Python Version)
+# TGPred v.0.1.0 (Python Version)
 
 <!-- badges: start -->
 
-Python version of the Accelerated Proximal Gradient Descent (APGD) algorithm is to solve the penalized regression models, including 
+Python version of TGPred contains six efficient methods for predicting target genes of a transcription factor by integrating statistics, machine learning, and optimization:
 
 - **HuberNet**: Huber loss function along with Network-based penalty function;
 - **HuberLasso**: Huber loss function along with Lasso penalty function;
 - **HuberENET**: Huber loss function along with Elastic Net penalty function;
-- **ENET**: Mean square error loss function along with Elastic Net penalty function;
-- **Lasso**: Mean square error loss function along with Lasso penalty function;
-- **Net**: Mean square error loss function along with Network-based penalty function.
+- **MSENet**: Mean square error loss function along with Network-based penalty function;
+- **MSELasso**: Mean square error loss function along with Lasso penalty function;
+- **MSEENET**: Mean square error loss function along with Elastic Net penalty function;
+- **APGD**: The Accelerated Proximal Gradient Descent (APGD) algorithm to solve the above six penalized regression models.
 
 We also have [**R version**](https://github.com/xueweic/TGPred), please see the following link for the guideline of R version https://github.com/xueweic/TGPred.
 
 &emsp;&emsp;
 
-## Reference
-Xuewei Cao<sup>+</sup>, Ling Zhang<sup>+</sup>, Kui Zhang, Sanzhen Liu, Qiuying Sha*, Hairong Wei*. HuberNet function for interfering target genes of regulatory genes using high-throughput gene expression data.
-
-<sub><sup> <sup>+</sup> These authors have contributed equally to this work </sup></sub>
-
-**Any questions?** lingzhan_AT_mtu_DOT_edu, xueweic_AT_mtu_DOT_edu
-
-&emsp;&emsp;
 
 ## Installation
 
@@ -37,27 +30,36 @@ pip install -r requirements.txt
 ```
 &emsp;
 
-**Step 2.** Simple install APGD package by runing command:
+**Step 2.** Simple install TGPred package by runing command:
 
 ``` r
-pip install APGD
+pip install TGPred
 ```
 &emsp;
 
-**Step 3.** Test your APGD in python:
+**Step 3.** Test your TGPred in python:
 
 ``` r
-import APGD
+import TGPred
 ```
 
-If there is no Error, you have installed APGD package successfully!
+If there is no Error, you have installed TGPred package successfully!
 
 &emsp; &emsp;
 
-**Step 4.** Play with function in APGD referred by [APGD_Guide](https://github.com/tobefuture/APGD/blob/main/APGD_Guide.pdf).
+**Step 4.** Play with function inTGPred referred by [APGD_Guide](https://github.com/tobefuture/APGD/blob/main/APGD_Guide.pdf).
 
 &emsp; &emsp;
+
+## Reference
+Xuewei Cao<sup>+</sup>, Ling Zhang<sup>+</sup>, Mingxia Zhao, Cheng He, Kui Zhang, Sanzhen Liu, Qiuying Sha*, Hairong Wei*. TGPred：Efficient methods for predicting target genes of a transcription factor by integrating statistics, machine learning, and optimization.
+
+<sub> <sup>+</sup> These authors have contributed equally to this work </sub>
+
+**Any questions?** xueweic_AT_mtu_DOT_edu, lingzhan_AT_mtu_DOT_edu
+
+&emsp;&emsp;
 
 ## Functions
 
-Please refer [APGD_Guide](https://github.com/tobefuture/APGD/blob/main/APGD_Guide.pdf).
+Please refer [TGPred_Guide](https://github.com/tobefuture/APGD/blob/main/APGD_Guide.pdf).
