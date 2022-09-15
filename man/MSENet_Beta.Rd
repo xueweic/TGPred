@@ -1,14 +1,14 @@
-\name{Net_Beta}
-\alias{Net_Beta}
+\name{MSENet_Beta}
+\alias{MSENet_Beta}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Estimate beta_hat using Net function
+Estimate beta_hat using MSE loss function along with Net penalty function
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-Net_Beta(X, y, Adj, lambda0, alpha0, method = "APGD", gamma = 1000, niter = 2000, crit_beta = 1e-04, crit_obj = 1e-08, quiet = FALSE, if.scale=FALSE)
+MSENet_Beta(X, y, Adj, lambda0, alpha0, method = "APGD", gamma = 1000, niter = 2000, crit_beta = 1e-04, crit_obj = 1e-08, quiet = FALSE, if.scale=FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -62,11 +62,11 @@ lambda0 = 200
   
 alpha0 = 0.5
   
-beta_hat_APGD <- Net_Beta(X, y, Adj, lambda0, alpha0,method="APGD", if.scale=TRUE)
+beta_hat_APGD <- MSENet_Beta(X, y, Adj, lambda0, alpha0,method="APGD", if.scale=TRUE)
   
 library("CVXR")
   
-beta_hat_CVX <- Net_Beta(X, y, Adj,lambda0, alpha0,method="CVX", if.scale=TRUE)
+beta_hat_CVX <- MSENet_Beta(X, y, Adj,lambda0, alpha0,method="CVX", if.scale=TRUE)
 
 }
 
