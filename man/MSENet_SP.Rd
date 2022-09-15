@@ -1,14 +1,14 @@
-\name{Net_SP}
-\alias{Net_SP}
+\name{MSENet_SP}
+\alias{MSENet_SP}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Estimate selection probability using Net function solving by APGD
+Estimate selection probability using MSE loss function along with Net penalty function solving by APGD
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-Net_SP(X, y, Adj, alphas, n_lambda, ratio = 1e-2, B = 500, gamma = 1000, niter = 2000, crit_beta = 1e-04, crit_obj = 1e-08, timer = TRUE)
+MSENet_SP(X, y, Adj, alphas, n_lambda, ratio = 1e-2, B = 500, gamma = 1000, niter = 2000, crit_beta = 1e-04, crit_obj = 1e-08, timer = TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -66,7 +66,7 @@ B0 <- 100
   
 ratio <- 0.01
 
-SP_Net = Net_SP(X, y, Adj ,alphas, n_lambda, ratio, B=B0, gamma=1000, niter=2000, timer=FALSE)
+SP_Net = MSENet_SP(X, y, Adj ,alphas, n_lambda, ratio, B=B0, gamma=1000, niter=2000, timer=FALSE)
 }
 
 
