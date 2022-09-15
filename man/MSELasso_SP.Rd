@@ -1,14 +1,14 @@
-\name{Lasso_SP}
-\alias{Lasso_SP}
+\name{MSELasso_SP}
+\alias{MSELasso_SP}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-stimate selection probability using Lasso function solving by APGD
+stimate selection probability using MSE loss function along with Lasso penalty function solving by APGD
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-Lasso_SP(X, y, n_lambda, ratio = 1e-2, B = 500, gamma = 1000, niter = 2000, crit_beta = 1e-04, crit_obj = 1e-08, timer = TRUE)
+MSELasso_SP(X, y, n_lambda, ratio = 1e-2, B = 500, gamma = 1000, niter = 2000, crit_beta = 1e-04, crit_obj = 1e-08, timer = TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -54,6 +54,6 @@ n_lambda <- 50
 
 ratio <- 0.01
   
-SP_Lasso = Lasso_SP(X, y, n_lambda, ratio, B=B0, gamma=1000, niter=2000, timer=FALSE)
+SP_Lasso = MSELasso_SP(X, y, n_lambda, ratio, B=B0, gamma=1000, niter=2000, timer=FALSE)
 }
 
