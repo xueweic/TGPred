@@ -1,14 +1,14 @@
-\name{ENET_Beta}
-\alias{ENET_Beta}
+\name{MSEENET_Beta}
+\alias{MSEENET_Beta}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
- Estimate beta_hat using Elastic Net function
+ Estimate beta_hat using MSE loss function along with Elastic Net penalty function
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-ENET_Beta(X, y, lambda0, alpha0, method = "APGD", gamma = 1000, niter = 2000, crit_beta = 1e-04, crit_obj = 1e-08, quiet = FALSE, if.scale=FALSE)
+MSEENET_Beta(X, y, lambda0, alpha0, method = "APGD", gamma = 1000, niter = 2000, crit_beta = 1e-04, crit_obj = 1e-08, quiet = FALSE, if.scale=FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -58,11 +58,11 @@ lambda0 = 200
  
 alpha0 = 0.5
  
-beta_hat_APGD <- ENET_Beta(X, y, lambda0, alpha0, method="APGD", if.scale=TRUE)
+beta_hat_APGD <- MSEENET_Beta(X, y, lambda0, alpha0, method="APGD", if.scale=TRUE)
  
 library("CVXR")
  
-beta_hat_CVX <- ENET_Beta(X, y, lambda0, alpha0,method="CVX", if.scale=TRUE)
+beta_hat_CVX <- MSEENET_Beta(X, y, lambda0, alpha0,method="CVX", if.scale=TRUE)
 }
 
 
