@@ -89,6 +89,7 @@ plot(beta_hat_APGD)
 <img src="man/figures/Beta_hat_APGD.jpeg" width="100%" />
 
 ``` r
+# install.packages("CVXR") before your library it.
 library("CVXR")
 beta_hat_CVX <- HuberNet_Beta(X, y, Adj, lambda0, alpha0, method="CVX", if.scale=TRUE)
 plot(beta_hat_CVX)
