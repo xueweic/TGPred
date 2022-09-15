@@ -1,6 +1,6 @@
-Package: APGD
+Package: TGPred
 Type: Package
-Title: Accelerated Proximal Gradient Descent (APGD) algorithm to solve the penalized regression models.
+Title: TGPred: Efficient methods for predicting target genes of a transcription factor by integrating statistics, machine learning, and optimization.
 Version: 0.1.0
 Author: Xuewei Cao <xueweic@mtu.edu> Ling Zhang <lingzhan@mtu.edu>
 Maintainer: Xuewei Cao <xueweic@mtu.edu>
