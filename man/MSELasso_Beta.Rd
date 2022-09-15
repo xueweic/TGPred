@@ -1,14 +1,14 @@
-\name{Lasso_Beta}
-\alias{Lasso_Beta}
+\name{MSELasso_Beta}
+\alias{MSELasso_Beta}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Estimate beta_hat using Lasso function
+Estimate beta_hat using MSE loss function along with Lasso penalty function
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-Lasso_Beta(X, y, lambda0, method = "APGD", gamma = 1000, niter = 2000, crit_beta = 1e-04, crit_obj = 1e-08, quiet = FALSE, if.scale=FALSE)
+MSELasso_Beta(X, y, lambda0, method = "APGD", gamma = 1000, niter = 2000, crit_beta = 1e-04, crit_obj = 1e-08, quiet = FALSE, if.scale=FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -53,10 +53,10 @@ if.scale decide if scale the expression levels. default: FALSE
 \examples{
 lambda0 = 200
   
-beta_hat_APGD <- Lasso_Beta(X, y, lambda0, method="APGD", if.scale=TRUE)
+beta_hat_APGD <- MSELasso_Beta(X, y, lambda0, method="APGD", if.scale=TRUE)
   
 library("CVXR")
   
-beta_hat_CVX <- Lasso_Beta(X, y, lambda0, method="CVX", if.scale=TRUE)
+beta_hat_CVX <- MSELasso_Beta(X, y, lambda0, method="CVX", if.scale=TRUE)
 }
 
