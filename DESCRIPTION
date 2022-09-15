@@ -24,13 +24,13 @@ Collate:
   HuberNet_SP.R
   HuberENET_Beta.R
   HuberENET_SP.R
-  ENET_Beta.R
-  ENET_SP.R
+  MSEENET_Beta.R
+  MSEENET_SP.R
   HuberLasso_Beta.R
   HuberLasso_SP.R
-  Lasso_Beta.R
-  Lasso_SP.R
-  Net_Beta.R
-  Net_SP.R
+  MSELasso_Beta.R
+  MSELasso_SP.R
+  MSENet_Beta.R
+  MSENet_SP.R
   Sample_data.R
 RoxygenNote: 7.1.1
