@@ -47,7 +47,7 @@ If there is no Error, you have installed TGPred package successfully!
 
 &emsp; &emsp;
 
-**Step 4.** Play with function inTGPred referred by [APGD_Guide](https://github.com/tobefuture/APGD/blob/main/APGD_Guide.pdf).
+**Step 4.** Play with function in TGPred referred by [TGPred_Guide](https://github.com/tobefuture/TGPred/blob/main/TGPred_Guide.pdf).
 
 &emsp; &emsp;
 
@@ -62,4 +62,4 @@ Xuewei Cao<sup>+</sup>, Ling Zhang<sup>+</sup>, Mingxia Zhao, Cheng He, Kui Zhan
 
 ## Functions
 
-Please refer [TGPred_Guide](https://github.com/tobefuture/APGD/blob/main/APGD_Guide.pdf).
+Please refer [TGPred_Guide](https://github.com/tobefuture/TGPred/blob/main/TGPred_Guide.pdf).
