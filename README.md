@@ -51,6 +51,12 @@ If there is no Error, you have installed TGPred package successfully!
 
 &emsp; &emsp;
 
+## Examples
+
+For quick testing, you can download this files and play with TGPred_example.py.
+
+&emsp; &emsp;
+
 ## Reference
 Xuewei Cao<sup>+</sup>, Ling Zhang<sup>+</sup>, Mingxia Zhao, Cheng He, Kui Zhang, Sanzhen Liu, Qiuying Sha*, Hairong Wei*. TGPred：Efficient methods for predicting target genes of a transcription factor by integrating statistics, machine learning, and optimization.
 
