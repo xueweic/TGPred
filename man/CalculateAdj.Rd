@@ -26,8 +26,8 @@ CalculateAdj(Annotation)
 }
 \examples{
 
+    Annotation <- matrix(c(1,1,0,0,0,0,1,1), nrow = 4, ncol = 2)
     Annotation <- data.matrix(Annotation)
-    
     CalculateAdj(Annotation)
 }
 
