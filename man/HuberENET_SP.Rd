@@ -61,7 +61,7 @@ n_lambda <- 10
   
 B0 <- 100
   
-ratio <- 0.01, 
+ratio <- 0.01
   
 SP_HuberENET = HuberENET_SP(X, y, alphas, n_lambda, ratio, B=B0, gamma=1000, niter=2000, timer=FALSE)
 }
