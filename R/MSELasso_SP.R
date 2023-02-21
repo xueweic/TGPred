@@ -33,6 +33,13 @@ MSELasso_SP <- function(X, y, n_lambda, ratio=1e-2, B=500,  gamma=1000, niter=20
   } else if (ncol(y) != 1){
     stop("Error: Please check the dimension of y. It should be n*1 vector!")
   }
+  # --- check NA value
+  if (any(is.na(X))) {
+     stop("Input X must not contain missing values.")
+  }
+  if (any(is.na(y))) {
+     stop("Input Y must not contain missing values.")
+  }
   # if (!requireNamespace("glmnet", quietly = TRUE)) install.packages("glmnet")
   library(glmnet)
   ####### Setting:
