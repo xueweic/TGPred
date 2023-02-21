@@ -86,7 +86,7 @@ HuberNet_Beta <- function(X, y, Adj, lambda0, alpha0, method="APGD",
   SLS <- L_norm * diag(S)
   SLS <- t(SLS) * diag(S)
   # M: shape parameter
-  M <- IQR(t(X) %*% y)/1.345
+  M <- IQR(t(X) %*% y, na.rm = TRUE)/1.345
   if (quiet == FALSE){
     print(paste("Start calculating beta using HuberNet by :", method))
   }
