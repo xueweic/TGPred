@@ -51,6 +51,14 @@ MSENet_SP <- function(X, y, Adj, alphas, n_lambda, ratio=1e-2, B=500,  gamma=100
   if (sum(alphas <= 0) + sum(alphas > 1) != 0){
     stop("Error: The range of alpha shoud be in (0,1]!")
   }
+  # --- check NA value
+  if (any(is.na(X))) {
+     stop("Input X must not contain missing values.")
+  }
+  if (any(is.na(y))) {
+     stop("Input Y must not contain missing values.")
+  }
+  
   # if (!requireNamespace("glmnet", quietly = TRUE)) install.packages("glmnet")
   library(glmnet)
   ####### Setting:
