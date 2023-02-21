@@ -57,7 +57,7 @@ HuberENET_Beta <- function(X, y, lambda0, alpha0, method="APGD",
   n <- nrow(X)
   p <- ncol(X)
   # M: shape parameter
-  M <- IQR(t(X) %*% y)/1.345
+  M <- IQR(t(X) %*% y, na.rm = TRUE)/1.345
   if (quiet == FALSE){
     print(paste("Start calculating beta using HuberENET by :", method))
   }
