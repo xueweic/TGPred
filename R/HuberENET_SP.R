@@ -44,7 +44,7 @@ HuberENET_SP <- function(X, y, alphas, n_lambda, ratio=1e-2, B=500,  gamma=1000,
   n <- nrow(X)
   p <- ncol(X)
   # M: shape parameter
-  M <- IQR(t(X) %*% y)/1.345
+  M <- IQR(t(X) %*% y, na.rm = TRUE)/1.345
 
   ## Start Huber-Net by APGD method
   print("Start calculating selection probability using HuberENET by APGD method:")
