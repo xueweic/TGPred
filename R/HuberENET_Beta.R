@@ -50,6 +50,13 @@ HuberENET_Beta <- function(X, y, lambda0, alpha0, method="APGD",
   if (method != "APGD" && method != "CVX"){
     stop("Error: The current methods must be 'APGD' or 'CVX'!")
   }
+  # --- check NA value
+  if (any(is.na(X))) {
+     stop("Input X must not contain missing values.")
+  }
+  if (any(is.na(y))) {
+     stop("Input Y must not contain missing values.")
+  }
 
   # if (!requireNamespace("glmnet", quietly = TRUE)) install.packages("glmnet")
   library(glmnet)
