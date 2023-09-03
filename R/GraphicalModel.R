@@ -17,7 +17,7 @@
 #' @examples
 
 
-GraphicalModel <- function(Adj, a1 = -0.7, a2 = -0.1, b1 = 0.1, b2 = 0.7) {
+GraphicalModel <- function(Adj, rescale_para = 1.5, a1 = -0.7, a2 = -0.1, b1 = 0.1, b2 = 0.7) {
   if (!requireNamespace("MASS", quietly = TRUE)) install.packages("MASS")
   library(MASS)
   ## Check adjacency matrix
@@ -40,7 +40,7 @@ GraphicalModel <- function(Adj, a1 = -0.7, a2 = -0.1, b1 = 0.1, b2 = 0.7) {
   Adj <- Adj * matrix(rho.1, nrow(Adj))
   # - Rescale matrix
   rSum <- rowSums(abs(Adj))
-  Adj.rescale <- Adj / (5 * sapply(1:ncol(Adj), function(t) {
+  Adj.rescale <- Adj / (rescale_para * sapply(1:ncol(Adj), function(t) {
     return(rSum)
   }))
   # - Ensure symmetry
