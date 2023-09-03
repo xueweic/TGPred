@@ -17,7 +17,7 @@
 #' @examples
 
 
-GraphicalModel <- function(Adj, rescale_para = 1.5, a1 = -0.9, a2 = -0.1, b1 = 0.1, b2 = 0.9) {
+GraphicalModel <- function(Adj, rescale_para = 1.1, a1 = -2, a2 = -1, b1 = 1, b2 = 2) {
   if (!requireNamespace("MASS", quietly = TRUE)) install.packages("MASS")
   library(MASS)
   ## Check adjacency matrix
